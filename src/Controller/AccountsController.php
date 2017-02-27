@@ -45,6 +45,10 @@ class AccountsController extends AppController
     {
 		
     }
+    function seances()
+    {
+        
+    }
 	//page E Objets Connectés
     function objetsco()
     {

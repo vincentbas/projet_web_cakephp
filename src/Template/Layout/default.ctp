@@ -258,7 +258,7 @@
 =======
 <?php $this->assign("title", "Projet Web"); ?>
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <?= $this->Html->charset() ?>
@@ -288,8 +288,7 @@
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
-    <footer>
-    </footer>
-</body>
->>>>>>> ab202b3fa284dedcf010bdfd40aa482b03b8c1be
+    <!-<footer>-->
+   <!-- </footer>
+</body>-->
 </html>
