@@ -1,19 +1,44 @@
+<?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @since         0.10.0
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
 
+$cakeDescription = 'CakePHP: the rapid development php framework';
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <?= $this->Html->charset() ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
 
-    <title><?php echo $title_for_layout;?></title>
-	<?php echo $this->Html->css('font-awesome');?>
-    <?php echo $this->Html->css('bootstrap');?>
-	<?php echo $this->Html->css('style');?>
-	<?php echo $this->Html->css('style-responsive');?>
-	<?php echo $this->fetch('css');?>
+    <title>
+      <?= $cakeDescription ?>:
+      <?= $this->fetch('title') ?>
+    </title>
+  <?php echo $this->Html->css('font-awesome');?>
+    <?= $this->Html->meta('icon') ?>
+    <?= $this->Html->css('bootstrap.css') ?>
+    <?= $this->Html->css('style.css') ?>
+    <?= $this->Html->css('style-responsive.css') ?>
+    <?= $this->Html->css('table-responsive.css') ?>
+    <?= $this->Html->css('to-do.css') ?>
+    <?= $this->Html->css('zabuto_calendar.css') ?>
+
+    <?= $this->fetch('meta') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
 
   </head>
 
@@ -29,7 +54,7 @@
             <!--logo start-->
             <a class="logo"><b>SportManager</b></a>
             <!--logo end-->
-			
+      
             <div class="nav notify-row">
                 <!--  notification start -->
                 <ul class="nav top-menu">
@@ -115,7 +140,7 @@
                             </li>
                             <li>
                                 <a>
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
+                                    <!--<span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>-->
                                     <span class="subject">
                                     <span class="from">John Smith</span>
                                     <span class="time">1 min</span>
@@ -127,19 +152,19 @@
                             </li>
                             <li>
                                 <a>
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
+                                    <!--<span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>-->
                                     <span class="subject">
                                     <span class="from">Jessie Owen</span>
                                     <span class="time">40 mins</span>
                                     </span>
                                     <span class="message">
-										Bon anniversaire ma petite caille
+                    Bon anniversaire ma petite caille
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
+                                   <!-- <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>-->
                                     <span class="subject">
                                     <span class="from">Ramirez Hernandez</span>
                                     <span class="time">2 hrs</span>
@@ -159,20 +184,20 @@
                 </ul>
                 <!--  notification end -->
             </div>
-			<div class="col-sm-3 col-md-3">
-				<form class="navbar-form" role="search">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Cerca" name="q">
-					<div class="input-group-btn">
-						<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-					</div>
-				</div>
-				</form>
-			</div>
+      <div class="col-sm-3 col-md-3">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Cerca" name="q">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+          </div>
+        </div>
+        </form>
+      </div>
             <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout">Connexion</a></li>
-            	</ul>
+              <ul class="nav pull-right top-menu">
+                    <li><?= $this->Html->link('Deconnexion', ['controller' => 'Members', 'action' => 'logout','class' => 'logout']);?></li>
+              </ul>
             </div>
         </header>
       <!--header end-->
@@ -186,18 +211,18 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Maya Benguigui</h5>
-              	  	
+                  <!--<p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>-->
+                  <h5 class="centered"><?= $this->request->Session()->read('Auth.User.email'); ?></h5>
+                    
                   <li class="mt">
                       <a class="active">
                           <i class="fa fa-dashboard"></i>
                           <span>Accueil</span>
-						  <ul class="sub">
-							  <li><a>Présentation</a></li>
-							  <li><a>&Eacute;quipe</a></li>
-							  <li><a>Mode d'emploi</a></li>
-						  </ul>
+              <ul class="sub">
+                <li><a>Présentation</a></li>
+                <li><a>&Eacute;quipe</a></li>
+                <li><a>Mode d'emploi</a></li>
+              </ul>
                       </a>
                   </li>
 
@@ -205,10 +230,10 @@
                       <a>
                           <i class="fa fa-desktop"></i>
                           <span>Mon Profil</span>
-						  <ul class="sub">
-							  <li><a>Statistiques</a></li>
-							  <li><a>Badges</a></li>
-						  </ul>
+              <ul class="sub">
+                <li><a>Statistiques</a></li>
+                <li><a>Badges</a></li>
+              </ul>
                       </a>
                   </li>
 
@@ -216,10 +241,10 @@
                       <a>
                           <i class="fa fa-cogs"></i>
                           <span>Mes Séances</span>
-						  <ul class="sub">
-							  <li><a>Calendrier</a></li>
-							  <li><a>Entraînements</a></li>
-						  </ul>
+              <ul class="sub">
+                <li><a>Calendrier</a></li>
+                <li><a>Entraînements</a></li>
+              </ul>
                       </a>
                   </li>
                   <li class="sub-menu">
@@ -238,57 +263,54 @@
               <!-- sidebar menu end-->
           </div>
       </aside>
-		<div class="container">
-		  <?php echo $this->fetch("content");?>
-		</div>
-		<!-- /.container -->
+
+      <section id="main-content">
+          <section class="wrapper">
+
+              <div class="col-lg-12">
+                  <div class="col-lg-12 main-chart">               
+                      <div class="col-lg-12">
+                      
+                      </div><!-- /row -->
+                    
+                            
+          <div class="col-lg-12">
+            
+          </div><!-- /row -->
+          
+          <div class="col-lg-12">
+                      
+          </div><!-- /row --> 
+          
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->                  
+              </div><! --/row -->
+
+    <div class="container clearfix"">
+      <?php echo $this->fetch("content");?>
+    </div>
+    <!-- /.container -->
    
-	</section>
+  </section>
       <!--sidebar end-->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
+    <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
     
-    <?php echo $this->Html->script('bootstrap');?>
-	<?php echo $this->Html->script('default');?>
-	<?php echo $this->fetch('script');?>
-	
+  <?= $this->Html->script('bootstrap');?>
+  <?= $this->Html->script('default');?>
+  <?= $this->fetch('script');?>
+  <?= $this->fetch('jquery'); ?>
+  <?= $this->fetch('bootstrap.min'); ?>
+  <?= $this->fetch('jquery.dcjqaccordion.2.7'); ?>
+  <?= $this->fetch('jquery.scrollTo.min'); ?>
+  <?= $this->fetch('jquery.nicescroll'); ?>
+  <?= $this->fetch('jquery.sparkline'); ?>
+  <?= $this->fetch('common-scripts'); ?>
+  <?= $this->fetch('jquery.gritter'); ?>
+  <?= $this->fetch('gritter-conf'); ?>
+  <?= $this->fetch('sparkline-chart'); ?>
+  <?= $this->fetch('zabuto_calendar'); ?>
+  
   </body>
-=======
 <?php $this->assign("title", "Projet Web"); ?>
-
-<!--<!DOCTYPE html>
-<html>
-<head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
-
-    <?= $this->Html->css('style.css') ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
-</head>
-<body>
-    <header>
-        <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-        <nav class="top-bar expanded" data-topbar role="navigation">
-                <ul class="right">
-                    <li><a target="_blank" href="#">Connexion</a></li>
-                    <li><a target="_blank" href="#">Inscription</a></li>
-                </ul>
-        </nav>
-    </header>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
-    </div>
-    <!-<footer>-->
-   <!-- </footer>
-</body>-->
 </html>

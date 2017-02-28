@@ -10,6 +10,11 @@ class AccountsController extends AppController
     {
 		
     }
+    //page Profil
+    function profil()
+    {
+        
+    }
 	//page A.2 Equipe
     function equipe()
     {
