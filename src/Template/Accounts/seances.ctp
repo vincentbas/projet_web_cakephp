@@ -31,7 +31,7 @@
     
     <tr>
     <td><input type="checkbox" class="checkthis" /></td>
-    <td><?= $this-> ?></td>
+    // <td><?= /* $this->:*/?></td>
     <td>Irshad</td>
     <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
     <td>isometric.mohsin@gmail.com</td>
