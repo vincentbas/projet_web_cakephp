@@ -54,11 +54,6 @@ class AccountsController extends AppController
     {
         
     }
-	//page E Objets Connectés
-    function objetsco()
-    {
-		
-    }
 	//page F Mentions Légales
     function mentions()
     {
