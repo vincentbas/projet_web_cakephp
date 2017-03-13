@@ -6201,3 +6201,18 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+input[type="email"], input[type="password"]{
+  padding: 10px;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid #797979;
+}
+
+input[type="password"]{
+  margin-top: 10px;
+}
+
+input[type="submit"]{
+  padding: 10px;
+}

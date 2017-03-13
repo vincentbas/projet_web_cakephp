@@ -5,8 +5,8 @@
         <h2 class="form-login-heading">Connectez-vous</h2>
         <div class="login-wrap">
             <?= $this->Form->create(); ?>
-			<?= $this->Form->input('email');?>
-			<?= $this->Form->input('password', array('type' => 'password'));?>
+			<?= $this->Form->input('email', ['label' => false, 'placeholder' => 'Email']);?>
+			<?= $this->Form->input('password', ['type' => 'password', 'label' => false, 'placeholder' => 'Mot de Passe']);?>
 			<br>
 			<?= $this->Form->submit('Login', array('class' => 'button','class' => 'btn btn-theme btn-block'));?>
 			<?= $this->Form->end(); ?>
