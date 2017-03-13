@@ -49,144 +49,144 @@
       <header class="header black-bg">
               
             <!--logo start-->
-            <a class="logo"><b>SportManager</b></a>
-            <!--logo end-->
-      
-            <div class="nav notify-row">
-                <!--  notification start -->
-                <ul class="nav top-menu">
-                    <!-- settings start -->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <i class="fa fa-tasks"></i>
-                            <span class="badge bg-theme">4</span>
-                        </a>
-                        <ul class="dropdown-menu extended tasks-bar">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">4 entraînments en cours</p>
-                            </li>
-                            <li>
-                                <a>
-                                    <div class="task-info">
-                                        <div class="desc">Pompes</div>
-                                        <div class="percent">40%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <div class="task-info">
-                                        <div class="desc">Distance Parcourue</div>
-                                        <div class="percent">60%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <div class="task-info">
-                                        <div class="desc">Perte de poids</div>
-                                        <div class="percent">80%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <div class="task-info">
-                                        <div class="desc">Séance corde à sauter</div>
-                                        <div class="percent">70%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                            <span class="sr-only">70% Complete (Important)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="external">
-                                <a href="#">Voir Plus</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- settings end -->
-                    <!-- inbox dropdown start-->
-                    <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-theme">3</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">3 nouveaux messages</p>
-                            </li>
-                            <li>
-                                <a>
-                                    <!--<span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>-->
-                                    <span class="subject">
-                                    <span class="from">John Smith</span>
-                                    <span class="time">1 min</span>
-                                    </span>
-                                    <span class="message">
-                                        Hey bro, on s'enjaille
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <!--<span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>-->
-                                    <span class="subject">
-                                    <span class="from">Jessie Owen</span>
-                                    <span class="time">40 mins</span>
-                                    </span>
-                                    <span class="message">
-                    Bon anniversaire ma petite caille
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                   <!-- <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>-->
-                                    <span class="subject">
-                                    <span class="from">Ramirez Hernandez</span>
-                                    <span class="time">2 hrs</span>
-                                    </span>
-                                    <span class="message">
-                                        On se retrouve sur les terrains, prêt à en découdre
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a>Voir tous les messages</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- inbox dropdown end -->
-                </ul>
-                <!--  notification end -->
+            <div style="display: flex; align-items: center;">
+              <a class="logo"><b>SportManager</b></a>
+              <!--logo end-->
+                    
+              <div class="nav notify-row">
+                  <!--  notification start -->
+                  <ul class="nav top-menu">
+                      <!-- settings start -->
+                      <li class="dropdown">
+                          <a data-toggle="dropdown" class="dropdown-toggle notifs" href="index.html#">
+                              <i class="fa fa-tasks"></i>
+                              <span class="badge bg-theme">4</span>
+                          </a>
+                          <ul class="dropdown-menu extended tasks-bar">
+                              <div class="notify-arrow notify-arrow-green"></div>
+                              <li>
+                                  <p class="green">4 entraînments en cours</p>
+                              </li>
+                              <li>
+                                  <a>
+                                      <div class="task-info">
+                                          <div class="desc">Pompes</div>
+                                          <div class="percent">40%</div>
+                                      </div>
+                                      <div class="progress progress-striped">
+                                          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                              <span class="sr-only">40% Complete (success)</span>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a>
+                                      <div class="task-info">
+                                          <div class="desc">Distance Parcourue</div>
+                                          <div class="percent">60%</div>
+                                      </div>
+                                      <div class="progress progress-striped">
+                                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                              <span class="sr-only">60% Complete (warning)</span>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a>
+                                      <div class="task-info">
+                                          <div class="desc">Perte de poids</div>
+                                          <div class="percent">80%</div>
+                                      </div>
+                                      <div class="progress progress-striped">
+                                          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                              <span class="sr-only">80% Complete</span>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a>
+                                      <div class="task-info">
+                                          <div class="desc">Séance corde à sauter</div>
+                                          <div class="percent">70%</div>
+                                      </div>
+                                      <div class="progress progress-striped">
+                                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                              <span class="sr-only">70% Complete (Important)</span>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </li>
+                              <li class="external">
+                                  <a href="#">Voir Plus</a>
+                              </li>
+                          </ul>
+                      </li>
+                      <!-- settings end -->
+                      <!-- inbox dropdown start-->
+                      <li id="header_inbox_bar" class="dropdown">
+                          <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                              <i class="fa fa-envelope-o"></i>
+                              <span class="badge bg-theme">3</span>
+                          </a>
+                          <ul class="dropdown-menu extended inbox">
+                              <div class="notify-arrow notify-arrow-green"></div>
+                              <li>
+                                  <p class="green">3 nouveaux messages</p>
+                              </li>
+                              <li>
+                                  <a>
+                                      <!--<span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>-->
+                                      <span class="subject">
+                                      <span class="from">John Smith</span>
+                                      <span class="time">1 min</span>
+                                      </span>
+                                      <span class="message">
+                                          Hey bro, on s'enjaille
+                                      </span>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a>
+                                      <!--<span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>-->
+                                      <span class="subject">
+                                      <span class="from">Jessie Owen</span>
+                                      <span class="time">40 mins</span>
+                                      </span>
+                                      <span class="message">
+                      Bon anniversaire ma petite caille
+                                      </span>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a>
+                                     <!-- <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>-->
+                                      <span class="subject">
+                                      <span class="from">Ramirez Hernandez</span>
+                                      <span class="time">2 hrs</span>
+                                      </span>
+                                      <span class="message">
+                                          On se retrouve sur les terrains, prêt à en découdre
+                                      </span>
+                                  </a>
+                              </li>
+                              
+                              <li>
+                                  <a>Voir tous les messages</a>
+                              </li>
+                          </ul>
+                      </li>
+                      <!-- inbox dropdown end -->
+                  </ul>
+                  <!--  notification end -->
             </div>
-      <div class="col-sm-3 col-md-3">
         <form class="navbar-form" role="search">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Cerca" name="q">
+          <input type="text" class="form-control" placeholder="Recherche" name="q">
           <div class="input-group-btn">
-            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
           </div>
         </div>
         </form>
