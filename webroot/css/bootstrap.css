@@ -910,7 +910,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: white;
   text-decoration: none;
 }
 a:hover,
@@ -3586,12 +3586,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
-}
-.nav > li > a:hover,
-.nav > li > a:focus {
-  text-decoration: none;
-  background-color: #eee;
 }
 .nav > li.disabled > a {
   color: #777;
@@ -6201,3 +6195,18 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+input[type="email"], input[type="password"]{
+  padding: 10px;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid #797979;
+}
+
+input[type="password"]{
+  margin-top: 10px;
+}
+
+input[type="submit"]{
+  padding: 10px;
+}
