@@ -12,8 +12,6 @@
  * @since         0.10.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,10 +20,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
-
+    <script src="https://use.fontawesome.com/2f9c124d19.js"></script>
     <title>
-      <?= $cakeDescription ?>:
-      <?= $this->fetch('title') ?>
+      SportManager
     </title>
   <?php echo $this->Html->css('font-awesome');?>
     <?= $this->Html->meta('icon') ?>
