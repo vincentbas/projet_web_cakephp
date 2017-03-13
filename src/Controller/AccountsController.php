@@ -52,7 +52,9 @@ class AccountsController extends AppController
     }
     function seances()
     {
-        
+        $this->loadModel("Workouts");
+        $w = $this->Workouts->find();
+        $this->Set("ws",$w->toArray());
     }
 	//page F Mentions Légales
     function mentions()
