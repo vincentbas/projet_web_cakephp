@@ -56,6 +56,10 @@ class AppController extends Controller
                 'loginAction' => [
                     'controller' => 'Members',
                     'action' => 'login'
+                ],
+                'logoutAction' => [
+                    'controller' => 'Members',
+                    'action' => 'login'
                 ]
             ]);
 
