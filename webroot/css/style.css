@@ -62,7 +62,7 @@ ul li {
 	background-color: #ffffff;
 	outline: none !important;
 	text-decoration: none;
-}	
+}
 
 
 
@@ -859,7 +859,7 @@ a.logo span {
 .border-head h3 {
     margin-top: 20px;
     margin-bottom: 20px;
-	margin-left: 15px;	
+	margin-left: 15px;
     padding-bottom: 5px;
     font-weight: normal;
     font-size: 18px;
@@ -969,7 +969,7 @@ PANELS CONFIGURATIONS
 
 .pn:hover {
 	box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.3);
-	
+
 }
 
 /*Grey Panel*/
@@ -1025,7 +1025,7 @@ PANELS CONFIGURATIONS
 	color: white;
 }
 .darkblue-panel footer h5 {
-	margin-left:10px; 
+	margin-left:10px;
 	margin-right: 10px;
 	font-weight: 700;
 }
@@ -1088,7 +1088,7 @@ PANELS CONFIGURATIONS
 .card {
   background: white;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1em; 
+  margin-bottom: 1em;
   height: 250px;
 }
 .stock .stock-chart {
@@ -1096,11 +1096,11 @@ PANELS CONFIGURATIONS
 }
 .stock .stock-chart #chart {
     height: 10.7em;
-    background: url(http://i.imgbox.com/abmuNQx2) center bottom no-repeat; 
-}    
+    background: url(http://i.imgbox.com/abmuNQx2) center bottom no-repeat;
+}
 .stock .current-price {
   background: #1d2122;
-  padding: 10px; 
+  padding: 10px;
 }
 .stock .current-price .info abbr {
     display: block;
@@ -1110,14 +1110,14 @@ PANELS CONFIGURATIONS
     margin-top: 0.18em;
 }
 .stock .current-price .changes {
-    text-align: right; 
+    text-align: right;
 }
 .stock .changes .up {
 	color: #4fd98b
 }
 .stock .current-price .changes .value {
       font-size: 1.8em;
-      font-weight: 700; 
+      font-weight: 700;
 }
 .stock .summary {
     color: #2f2f2f;
@@ -1669,7 +1669,7 @@ PANELS CONFIGURATIONS
   -moz-transition: opacity 0.4s;
   -o-transition: opacity 0.4s;
   transition: opacity 0.4s;
-  
+
 }
 
 .project:hover .photo-wrapper {
@@ -2222,7 +2222,7 @@ label {
 
 #seances
 {
-  
+
 }
 
 header{
@@ -2230,3 +2230,93 @@ header{
     align-items: center;
     justify-content: space-between;
 }
+
+/*Page Team*/
+.container{
+  width:100%!important;
+}
+/*End Page Team*/
+/*Page Présentation*/
+.panel-body p{
+  padding-left:10px!important;
+}
+.espace_service{
+  margin-bottom:20px;
+}
+.widget
+{
+  height:300px;
+  position: relative;
+  background: #f5f5f5;
+  padding-bottom:20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, .1);
+}
+.widget p
+{
+  text-align:center;
+}
+
+.widget > .cover
+{
+  height: 160px;
+  overflow: hidden;
+}
+
+.widget > .cover > img
+{
+  width: 100%;
+  height: auto;
+  min-height: 160px;
+  border-radius: 4px 4px 0 0;
+}
+
+.widget > .photo
+{
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 0 0 -55px;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+}
+
+
+.widget > ul
+{
+  position: absolute;
+  top: 20px;
+  left: 100%;
+  background: #175470;
+  border-radius: 0 3px 3px 0;
+}
+
+li
+{
+  list-style: none;
+}
+
+.widget > ul > li > a
+{
+  display: block;
+  padding: 5px 6px;
+  color: #FFF;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 1px solid #2CD5CA;
+  transition: background-color .3s;
+}
+
+.widget > ul > li:hover > a { background-color: #2CD5CA }
+.widget > ul > li:first-child > a { border-radius: 0 3px 0 0 }
+
+.widget > ul > li:last-child > a
+{
+  border: none;
+  border-radius: 0 0 3px 0;
+}
+
+
+/*End Page Présentation*/
