@@ -1,5 +1,6 @@
 <?php echo $this->Html->css('bootstrap');?>
 
+
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
@@ -9,6 +10,7 @@
         
         <div class="col-md-12">
         <h4>Mes Séances</h4>
+        <button>Ajouter une séance</button>
         <div class="table-responsive">
 
                 
@@ -28,8 +30,12 @@
                    </thead>
     <tbody>
     
-    <tr>
-				<?php foreach ($ws as $w){ ?>
+    
+				<?php foreach ($ws as $w){ 
+					$date_a=$w->date;
+					$date_b=$w->end_date;
+					$interval = date_diff($date_a,$date_b);
+					?>
 					<tr class="success">
 					<?php
 						echo "<td>".$w->id."</td>";
@@ -38,33 +44,20 @@
 						echo "<td>".$w->date."</td>";
 						echo "<td>".$w->end_date."</td>";
 						echo "<td>".$w->location_name."</td>";
-						echo "<td></td>";
-						echo "<td>".$w->description."</td>";
+						echo "<td>".$interval->format('%h')." heure(s) ".$interval->format('%m')." minute(s)</td>";
+						echo "<td>".utf8_decode($w->description)."</td>";
 						
-						echo "<td>".$w->contest_i."</td>";
+						/*echo "<td>".$w->contest_i."</td>";*/
 					?>
-					</tr>
-				<?php } ?>
+		
     <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td> <?php } ?>
     </tr>
 
     </tbody>
         
 </table>
 
-<div class="clearfix"></div>
-<ul class="pagination pull-right">
-  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-  <li class="active"><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-</ul>
-                
-            </div>
             
         </div>
 	</div>

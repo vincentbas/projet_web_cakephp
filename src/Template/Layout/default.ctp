@@ -234,7 +234,7 @@
                       </a>
                   </li>
 
-                  <li class="sub-menu">
+                  <li class="sub-menu" href="">
                       <a>
                           <i class="fa fa-cogs"></i>
                           <span>Mes Séances</span>
@@ -251,10 +251,7 @@
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a>
-                          <i class="fa fa-tasks"></i>
-                          <span>Mes Objets Connectés</span>
-                      </a>
+                      <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Objets Connectés</span>', ['controller' => 'Devices', 'action' => 'objetsco'], ['escape'=>false]) ?>
                   </li>
               </ul>
               <!-- sidebar menu end-->
