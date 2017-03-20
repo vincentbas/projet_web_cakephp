@@ -5,10 +5,17 @@ use Cake\ORM\Table;
 
 class DevicesTable extends Table
 {
-
-    public function initialize(array $config)
+    public function myobjets($par1)
     {
-        $this->table('devices');
+        return $this->find()->where(["member_id"=>$par1])->order(["date"])->toArray();
     }
 
+    public function addobjets($serial, $description, $trusted)
+    {
+    	$new=$this->newEntity();
+    	$new->serial=$serial;
+    	$new->description=$description;
+    	$new->trusted=$trusted;
+    	$this->save($new);
+    }
 }

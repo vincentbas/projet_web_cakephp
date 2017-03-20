@@ -19,7 +19,7 @@
     <?= $this->Html->charset() ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://use.fontawesome.com/2f9c124d19.js"></script>
     <title>
       SportManager
@@ -47,12 +47,12 @@
       *********************************************************************************************************************************************************** -->
       <!--header start-->
       <header class="header black-bg">
-              
+
             <!--logo start-->
             <div style="display: flex; align-items: center;">
               <a class="logo"><b>SportManager</b></a>
               <!--logo end-->
-                    
+
               <div class="nav notify-row">
                   <!--  notification start -->
                   <ul class="nav top-menu">
@@ -172,7 +172,7 @@
                                       </span>
                                   </a>
                               </li>
-                              
+
                               <li>
                                   <a>Voir tous les messages</a>
                               </li>
@@ -198,7 +198,7 @@
             </div>
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -207,41 +207,28 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
+
                   <!--<p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>-->
                   <h5 class="centered"><?= $this->request->Session()->read('Auth.User.email'); ?></h5>
-                    
+
                   <li class="mt">
-                      <a class="active">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Accueil</span>
-              <ul class="sub">
-                <li><a>Présentation</a></li>
-                <li><a>&Eacute;quipe</a></li>
-                <li><a>Mode d'emploi</a></li>
-              </ul>
-                      </a>
+                      <?= $this->Html->link('<i class="fa fa-dashboard"></i><span>Dashboard</span>', ['controller' => 'Accounts', 'action' => 'profil'], ['escape'=>false]) ?>
                   </li>
 
                   <li class="sub-menu">
-                      <a>
-                          <i class="fa fa-desktop"></i>
-                          <span>Mon Profil</span>
-              <ul class="sub">
-                <li><a>Statistiques</a></li>
-                <li><a>Badges</a></li>
-              </ul>
-                      </a>
+                      <?= $this->Html->link('<i class="fa fa-desktop"></i><span>Mon Profil</span>', ['controller' => 'Accounts', 'action' => 'profil'], ['escape'=>false]) ?>
                   </li>
 
+<<<<<<< HEAD
                   <li class="sub-menu" >
                       <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Séances</span>', ['controller' => 'Accounts', 'action' => 'seances'], ['escape'=>false]) ?>
+=======
+                  <li class="sub-menu">
+                      <?= $this->Html->link('<i class="fa fa-cogs"></i><span>Mes Séances</span>', ['controller' => 'Accounts', 'action' => 'seances'], ['escape'=>false]) ?>
+>>>>>>> 71d9156389710edd49fe97dbe29f0146e4e16f4c
                   </li>
                   <li class="sub-menu">
-                      <a >
-                          <i class="fa fa-book"></i>
-                          <span>Classement</span>
-                      </a>
+                      <?= $this->Html->link('<i class="fa fa-book"></i><span>Classement</span>', ['controller' => 'Accounts', 'action' => 'classement'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
                       <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Objets Connectés</span>', ['controller' => 'Devices', 'action' => 'objetsco'], ['escape'=>false]) ?>
@@ -255,34 +242,34 @@
           <section class="wrapper">
 
               <div class="col-lg-12">
-                  <div class="col-lg-12 main-chart">               
+                  <div class="col-lg-12 main-chart">
                       <div class="col-lg-12">
-                      
+
                       </div><!-- /row -->
-                    
-                            
+
+
           <div class="col-lg-12">
-            
+
           </div><!-- /row -->
-          
+
           <div class="col-lg-12">
-                      
-          </div><!-- /row --> 
-          
-                  </div><!-- /col-lg-9 END SECTION MIDDLE -->                  
+
+          </div><!-- /row -->
+
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
               </div><! --/row -->
 
     <div class="container clearfix"">
       <?php echo $this->fetch("content");?>
     </div>
     <!-- /.container -->
-   
+
   </section>
       <!--sidebar end-->
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
+
   <?= $this->Html->script('bootstrap');?>
   <?= $this->Html->script('default');?>
   <?= $this->fetch('script');?>
@@ -297,7 +284,7 @@
   <?= $this->fetch('gritter-conf'); ?>
   <?= $this->fetch('sparkline-chart'); ?>
   <?= $this->fetch('zabuto_calendar'); ?>
-  
+
   </body>
 <?php $this->assign("title", "Projet Web"); ?>
 </html>
