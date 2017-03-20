@@ -1,18 +1,20 @@
-﻿
-<?php echo $this->Html->css('bootstrap');?>
-
 <section class="container">
-	<div>
-		<h2>
-			Ajouter un appareil connecté :
-		</h2>
-		<?=$this->Form->create();?>
-		<?=$this->Form->input('serial',array('class'=>'form-control'));?><br/>
-		<?=$this->Form->input('description',array('class'=>'form-control'));?><br/>
-		<?=$this->Form->input('trusted',array('class'=>'form-control'));?><br/>
-		<?=$this->Form->submit('Envoyer', array('class'=>'btn btn-primary'));?><br/>
-		<?=$this->Form->end();?>
-	</div>
+	<div class="col-md-12 text-center">
+            <div class="card">
+                <div>
+                    <div>
+                        <?= $this->Form->create("Devices") ?>
+                            <fieldset>
+                                <?= $this->Form->input('serial') ?>
+                                <?= $this->Form->input('description') ?>
+                                <?= $this->Form->input('trusted') ?>
+                            </fieldset>
+                            <?= $this->Form->submit('Ajouter', array('class' => 'btn btn-default margin-top')); ?>
+                        <?= $this->Form->end() ?>
+                    </div>
+                </div>
+            </div>
+    </div>
 	<div>
 		<h2>
 			Tous mes appareils :
@@ -41,5 +43,3 @@
 		</div>
 	</div>
 </section>
-
-<?php echo $this->Html->script('bootstrap');?>

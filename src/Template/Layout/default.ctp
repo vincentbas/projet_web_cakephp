@@ -19,7 +19,7 @@
     <?= $this->Html->charset() ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://use.fontawesome.com/2f9c124d19.js"></script>
     <title>
       SportManager
@@ -47,12 +47,12 @@
       *********************************************************************************************************************************************************** -->
       <!--header start-->
       <header class="header black-bg">
-              
+
             <!--logo start-->
             <div style="display: flex; align-items: center;">
               <a class="logo"><b>SportManager</b></a>
               <!--logo end-->
-                    
+
               <div class="nav notify-row">
                   <!--  notification start -->
                   <ul class="nav top-menu">
@@ -172,7 +172,7 @@
                                       </span>
                                   </a>
                               </li>
-                              
+
                               <li>
                                   <a>Voir tous les messages</a>
                               </li>
@@ -198,7 +198,7 @@
             </div>
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -207,10 +207,10 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
+
                   <!--<p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>-->
                   <h5 class="centered"><?= $this->request->Session()->read('Auth.User.email'); ?></h5>
-                    
+
                   <li class="mt">
                       <a class="active">
                           <i class="fa fa-dashboard"></i>
@@ -265,34 +265,34 @@
           <section class="wrapper">
 
               <div class="col-lg-12">
-                  <div class="col-lg-12 main-chart">               
+                  <div class="col-lg-12 main-chart">
                       <div class="col-lg-12">
-                      
+
                       </div><!-- /row -->
-                    
-                            
+
+
           <div class="col-lg-12">
-            
+
           </div><!-- /row -->
-          
+
           <div class="col-lg-12">
-                      
-          </div><!-- /row --> 
-          
-                  </div><!-- /col-lg-9 END SECTION MIDDLE -->                  
+
+          </div><!-- /row -->
+
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
               </div><! --/row -->
 
     <div class="container clearfix"">
       <?php echo $this->fetch("content");?>
     </div>
     <!-- /.container -->
-   
+
   </section>
       <!--sidebar end-->
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
+
   <?= $this->Html->script('bootstrap');?>
   <?= $this->Html->script('default');?>
   <?= $this->fetch('script');?>
@@ -307,7 +307,7 @@
   <?= $this->fetch('gritter-conf'); ?>
   <?= $this->fetch('sparkline-chart'); ?>
   <?= $this->fetch('zabuto_calendar'); ?>
-  
+
   </body>
 <?php $this->assign("title", "Projet Web"); ?>
 </html>
