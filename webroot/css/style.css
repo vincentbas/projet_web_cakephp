@@ -1057,7 +1057,7 @@ PANELS CONFIGURATIONS
 .white-panel {
 	text-align: center;
 	background: #ffffff;
-	color: #ccd1d9;
+	color: black;
 }
 
 .white-panel p {
@@ -1069,7 +1069,7 @@ PANELS CONFIGURATIONS
 	background: #424a5d;
 	padding: 3px;
 	margin-bottom: 15px;
-	color: #c6c6c6;
+	color: #ffffff;
 }
 
 
