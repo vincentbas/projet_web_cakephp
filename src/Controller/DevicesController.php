@@ -12,6 +12,13 @@ class DevicesController extends AppController
 		$this->loadModel("Devices");
 		$w=$this->Devices->find();
 		$this->Set("ws",$w->toArray());
+
+      if ($this->request->is("post")){
+        $serial=$this->request->data["serial"];
+        $description=$this->request->data["description"];
+        $trusted=$this->request->data["trusted"];
+        $this->Devices->addobjets($serial, $description, $trusted);
+      }
     }
 
 	  function addobjets()
@@ -19,6 +26,7 @@ class DevicesController extends AppController
 			//1
 			$id=1;
 			//if(!$id)$this->redirect(index);
+      echo"dddd";
 
 			//2
 			$this->loadModel("Devices");
