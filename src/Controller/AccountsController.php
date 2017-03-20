@@ -13,7 +13,15 @@ class AccountsController extends AppController
     //page Profil
     function profil()
     {
-        
+        $uid = $this->Auth->user('id');
+
+        $this->loadModel('Workouts');
+        $this->set('Workouts', $this->Workouts->find('all')
+             ->where(['member_id' => $uid]));
+
+        $this->loadModel('Earnings');
+        $this->set('Earnings',$this->Earnings->find('all')
+            ->where(['member_id' => $uid]));
     }
 	//page A.2 Equipe
     function equipe()
@@ -52,9 +60,11 @@ class AccountsController extends AppController
     }
     function seances()
     {
+
         $this->loadModel("Workouts");
         $w = $this->Workouts->find();
         $this->Set("ws",$w->toArray());
+
     }
 	//page F Mentions Légales
     function mentions()

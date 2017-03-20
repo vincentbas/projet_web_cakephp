@@ -1057,7 +1057,7 @@ PANELS CONFIGURATIONS
 .white-panel {
 	text-align: center;
 	background: #ffffff;
-	color: #ccd1d9;
+	color: black;
 }
 
 .white-panel p {
@@ -1066,10 +1066,10 @@ PANELS CONFIGURATIONS
 	margin-left: 15px;
 }
 .white-panel .white-header {
-	background: red;
+	background: #424a5d;
 	padding: 3px;
 	margin-bottom: 15px;
-	color: #c6c6c6;
+	color: #ffffff;
 }
 
 
@@ -2317,6 +2317,16 @@ li
   border: none;
   border-radius: 0 0 3px 0;
 }
+
+.avatar
+{
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 100%;
+    border-color: white;
+    width: 200px;
+}
+
 
 
 /*End Page Présentation*/
