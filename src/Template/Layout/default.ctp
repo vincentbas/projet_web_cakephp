@@ -219,13 +219,9 @@
                       <?= $this->Html->link('<i class="fa fa-desktop"></i><span>Mon Profil</span>', ['controller' => 'Accounts', 'action' => 'profil'], ['escape'=>false]) ?>
                   </li>
 
-<<<<<<< HEAD
                   <li class="sub-menu" >
                       <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Séances</span>', ['controller' => 'Accounts', 'action' => 'seances'], ['escape'=>false]) ?>
-=======
-                  <li class="sub-menu">
-                      <?= $this->Html->link('<i class="fa fa-cogs"></i><span>Mes Séances</span>', ['controller' => 'Accounts', 'action' => 'seances'], ['escape'=>false]) ?>
->>>>>>> 71d9156389710edd49fe97dbe29f0146e4e16f4c
+
                   </li>
                   <li class="sub-menu">
                       <?= $this->Html->link('<i class="fa fa-book"></i><span>Classement</span>', ['controller' => 'Accounts', 'action' => 'classement'], ['escape'=>false]) ?>
@@ -257,7 +253,7 @@
           </div><!-- /row -->
 
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
-              </div><! --/row -->
+              </div>
 
     <div class="container clearfix"">
       <?php echo $this->fetch("content");?>
