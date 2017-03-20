@@ -234,15 +234,8 @@
                       </a>
                   </li>
 
-                  <li class="sub-menu" href="">
-                      <a>
-                          <i class="fa fa-cogs"></i>
-                          <span>Mes Séances</span>
-              <ul class="sub">
-                <li><a>Calendrier</a></li>
-                <li><a>Entraînements</a></li>
-              </ul>
-                      </a>
+                  <li class="sub-menu" >
+                      <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Séances</span>', ['controller' => 'Accounts', 'action' => 'seances'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
                       <a >
