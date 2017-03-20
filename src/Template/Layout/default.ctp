@@ -212,43 +212,18 @@
                   <h5 class="centered"><?= $this->request->Session()->read('Auth.User.email'); ?></h5>
 
                   <li class="mt">
-                      <a class="active">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Accueil</span>
-              <ul class="sub">
-                <li><a>Présentation</a></li>
-                <li><a>&Eacute;quipe</a></li>
-                <li><a>Mode d'emploi</a></li>
-              </ul>
-                      </a>
+                      <?= $this->Html->link('<i class="fa fa-dashboard"></i><span>Dashboard</span>', ['controller' => 'Accounts', 'action' => 'profil'], ['escape'=>false]) ?>
                   </li>
 
                   <li class="sub-menu">
-                      <a>
-                          <i class="fa fa-desktop"></i>
-                          <span>Mon Profil</span>
-              <ul class="sub">
-                <li><a>Statistiques</a></li>
-                <li><a>Badges</a></li>
-              </ul>
-                      </a>
+                      <?= $this->Html->link('<i class="fa fa-desktop"></i><span>Mon Profil</span>', ['controller' => 'Accounts', 'action' => 'profil'], ['escape'=>false]) ?>
                   </li>
 
-                  <li class="sub-menu" href="">
-                      <a>
-                          <i class="fa fa-cogs"></i>
-                          <span>Mes Séances</span>
-              <ul class="sub">
-                <li><a>Calendrier</a></li>
-                <li><a>Entraînements</a></li>
-              </ul>
-                      </a>
+                  <li class="sub-menu">
+                      <?= $this->Html->link('<i class="fa fa-cogs"></i><span>Mes Séances</span>', ['controller' => 'Accounts', 'action' => 'seances'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
-                      <a >
-                          <i class="fa fa-book"></i>
-                          <span>Classement</span>
-                      </a>
+                      <?= $this->Html->link('<i class="fa fa-book"></i><span>Classement</span>', ['controller' => 'Accounts', 'action' => 'classement'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
                       <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Objets Connectés</span>', ['controller' => 'Devices', 'action' => 'objetsco'], ['escape'=>false]) ?>
