@@ -64,8 +64,29 @@ class AccountsController extends AppController
     {
 
         $this->loadModel("Workouts");
-        $w = $this->Workouts->find();
+        $w = $this->Workouts->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
         $this->Set("ws",$w->toArray());
+
+        if ($this->request->is("post")){
+        if(isset($_POST['ajouter'])){
+          $number=$number++;
+          $member_id=$this->request->data["member_id"];
+          $location=$this->request->data["location_name"];
+          $description=$this->request->data["description"];
+          $sport=$this->request->data["sport"];
+          $date=$this->request->data["date"];
+          $date_end=$this->request->data["date_end"];
+          $contest_id=$this->request->data["contest_id"];
+
+
+          $this->Workouts->addobjets($id,$member_id, $date,$date_end, $description, $location_name,$contest_id);
+        }
+        /*elseif(isset($_POST['supprimer'])){
+          // Dans un controller.
+          $id=$this->request->data["id"];
+          $this->Workouts->suppobjets($id);
+        }*/
+      }
 
     }
 	//page F Mentions Légales

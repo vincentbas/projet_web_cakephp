@@ -33,13 +33,13 @@
       </div>
 
 		  <div class="row" style="margin-bottom: 10px;">
-        <div id="form_un" class="col-md-2">
+        <div id="form_un" style="margin-top: 15px;" class="col-md-2">
           <h5 >Fin de la séance : </h5>
         </div>
-        <div id="form_un" class="col-md-5">
+        <div id="form_un" style="margin-top: 15px;" class="col-md-5">
           <input type="date" class="form-control" id="date_fin">
         </div>
-        <div id="form_un" class="col-md-5">
+        <div id="form_un" style="margin-top: 15px;" class="col-md-5">
           <input type="time" class="form-control" id="time_fin">
         </div>
       </div>
@@ -53,8 +53,10 @@
 
 		  <button type="submit" class="btn btn-default">Ajouter</button>
 		</form>
+		
         </section>
         </details>
+        <br>
         <div class="table-responsive">
 
 
