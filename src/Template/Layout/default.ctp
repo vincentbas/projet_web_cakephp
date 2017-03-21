@@ -24,7 +24,7 @@
     <title>
       SportManager
     </title>
-  <?php echo $this->Html->css('font-awesome');?>
+    <?php echo $this->Html->css('font-awesome');?>
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('style.css') ?>
@@ -32,7 +32,12 @@
     <?= $this->Html->css('table-responsive.css') ?>
     <?= $this->Html->css('to-do.css') ?>
     <?= $this->Html->css('zabuto_calendar.css') ?>
-
+    <style>
+      #map{
+        height:620px;
+        width:100%;
+      }
+    </style>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-use App\Controller\AppController;   
+use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 
 class AccountsController extends AppController
@@ -24,7 +24,7 @@ class AccountsController extends AppController
         $stickersNames = $this->Stickers->getStickerName($uid);
         $this->set('Stickers',$stickersNames);
 
-    
+
     }
 	//page A.2 Equipe
     function equipe()
@@ -109,7 +109,11 @@ class AccountsController extends AppController
   //page H CNIL
     function localisation()
     {
-
+      //Charge le model "Workouts"
+      $this->loadModel("Logs");
+      //Va chercher toutes les séances
+      $loc = $this->Logs->find();
+      $this->Set("locs",$loc->toArray());
     }
 
     function edit()
@@ -156,7 +160,7 @@ class AccountsController extends AppController
 
 
              if((!empty($this->request->data['email'])&&($this->request->data['email_new']))||(($this->request->data['password'])&&($this->request->data['password_new']))){
-                
+
                 $email = $this->request->data['email'];
                 $email_new = $this->request->data['email_new'];
                 $password = $this->request->data['password'];
@@ -168,7 +172,7 @@ class AccountsController extends AppController
                     ->set(['email' => $email_new])
                     ->where(['email' => $email])
                     ->execute();
-                
+
         }
 
     }
