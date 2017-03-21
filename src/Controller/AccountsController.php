@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Controller;
-use App\Controller\AppController;
+use App\Controller\AppController;   
+use Cake\ORM\TableRegistry;
 
 class AccountsController extends AppController
 {
@@ -19,9 +20,11 @@ class AccountsController extends AppController
         $this->set('Workouts', $this->Workouts->find('all')
              ->where(['member_id' => $uid]));
 
-        $this->loadModel('Earnings');
-        $this->set('Earnings',$this->Earnings->find('all')
-            ->where(['member_id' => $uid]));
+        $this->loadModel('Stickers');
+        $stickersNames = $this->Stickers->getStickerName($uid);
+        $this->set('Stickers',$stickersNames);
+
+    
     }
 	//page A.2 Equipe
     function equipe()
@@ -105,8 +108,29 @@ class AccountsController extends AppController
 
                 }
             }
+            else{
+
+            }
+
+
+             if((!empty($this->request->data['email'])&&($this->request->data['email_new']))||(($this->request->data['password'])&&($this->request->data['password_new']))){
+                
+                $email = $this->request->data['email'];
+                $email_new = $this->request->data['email_new'];
+                $password = $this->request->data['password'];
+                $password_new = $this->request->data['password_new'];
+
+                $tablename = TableRegistry::get('Members');
+                $query = $tablename->query();
+                $result = $query->update()
+                    ->set(['email' => $email_new])
+                    ->where(['email' => $email])
+                    ->execute();
+                
         }
 
     }
+}
+
 
 }
