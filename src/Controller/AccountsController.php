@@ -158,6 +158,8 @@ class AccountsController extends AppController
 
             }
 
+            
+
 
              if((!empty($this->request->data['email'])&&($this->request->data['email_new']))||(($this->request->data['password'])&&($this->request->data['password_new']))){
 
