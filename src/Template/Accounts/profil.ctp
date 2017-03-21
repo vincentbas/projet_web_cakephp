@@ -1,6 +1,6 @@
 <div class="centered donut-chart">
     <div class="row mt">
-    	<?= $this->Html->image('profil/'.$this->request->Session()->read('Auth.User.id').'/fr-03', array('class' => 'avatar', 
+    	<?= $this->Html->image('profils/'.$this->request->Session()->read('Auth.User.id').'.jpg', array('class' => 'avatar', 
     												'alt' => 'profil',
     												'url' => array('controller' => 'Accounts', 'action' => 'profil'))); ?>
 	</div>
