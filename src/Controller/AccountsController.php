@@ -152,7 +152,8 @@ class AccountsController extends AppController
                     'key' => 'error'
                 ));
             }
-            else{
+        }
+        else{
 
             }
 
@@ -174,7 +175,4 @@ class AccountsController extends AppController
         }
 
     }
-}
-
-
 }
