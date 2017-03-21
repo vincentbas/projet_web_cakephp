@@ -10,7 +10,7 @@ class DevicesController extends AppController
     function objetsco()
     {
 		$this->loadModel("Devices");
-		$w=$this->Devices->find();
+		$w=$this->Devices->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
 		$this->Set("ws",$w->toArray());
 
       if ($this->request->is("post")){

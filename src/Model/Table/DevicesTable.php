@@ -7,7 +7,7 @@ class DevicesTable extends Table
 {
     public function myobjets($par1)
     {
-        return $this->find()->where(["member_id"=>$par1])->order(["date"])->toArray();
+        return $this->Devices->find()->where(["member_id"=>$par1])->toArray();
     }
 
     public function addobjets($member_id, $serial, $description, $trusted)
