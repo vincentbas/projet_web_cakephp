@@ -6,8 +6,11 @@
 
         <div class="col-md-12">
         <h4>Mes Séances</h4>
-        <button>Ajouter une séance</button>
-        <div>
+        <details>
+		  <summary id="ajout">Cliquez pour ajouter une séance</summary>
+        
+        <section id="formulaire">
+
 		   <form class="form-inline">
 		  <div class="form-group">
 		    <label class="sr-only" for="email">Sport:</label>
@@ -32,7 +35,8 @@
 
 		  <button type="submit" class="btn btn-default">Ajouter</button>
 		</form>
-        </div>
+        </section>
+        </details>
         <div class="table-responsive">
 
 
