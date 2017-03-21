@@ -59,7 +59,9 @@ class AccountsController extends AppController
 	//page D Classement
     function classement()
     {
+        //Charge le model "Workouts"
         $this->loadModel("Workouts");
+        //Va chercher toutes les séances
         $workouts = $this->Workouts->find("all");
         dd($workouts);
     }
