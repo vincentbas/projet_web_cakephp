@@ -18,27 +18,31 @@
 		    <input type="text" class="form-control" placeholder="Sport" id="sport">
 		  </div>
 
-		  <div id="form_un" class="col-md-4">
-		    <h5 >Début de la séance : </h5>
-		  </div>
+		  <div class="row">
+        <div id="form_un" class="col-md-2">
+          <h5 >Début de la séance : </h5>
+        </div>
+        
+        <div id="form_un" class="col-md-5">
+          <input type="date" class="form-control" id="date_debut">
+        </div>
+        
+        <div id="form_un" class="col-md-5">
+          <input type="time" class="form-control" id="time_debut">
+        </div>
+      </div>
 
-		  <div id="form_un" class="col-md-4">
-		    <input type="date" class="form-control" id="date_debut">
-		  </div>
-
-		  <div id="form_un" class="col-md-4">
-		    <input type="time" class="form-control" id="time_debut">
-		  </div>
-
-		  <div id="form_un" class="col-md-4">
-		    <h5 >Fin de la séance : </h5>
-		  </div>
-		  <div id="form_un" class="col-md-4">
-		    <input type="date" class="form-control" id="date_fin">
-		  </div>
-		  <div id="form_un" class="col-md-4">
-		    <input type="time" class="form-control" id="time_fin">
-		  </div>
+		  <div class="row" style="margin-bottom: 10px;">
+        <div id="form_un" class="col-md-2">
+          <h5 >Fin de la séance : </h5>
+        </div>
+        <div id="form_un" class="col-md-5">
+          <input type="date" class="form-control" id="date_fin">
+        </div>
+        <div id="form_un" class="col-md-5">
+          <input type="time" class="form-control" id="time_fin">
+        </div>
+      </div>
 		  <div class="form-group">
 		    <input type="text" class="form-control" placeholder="Lieu" id="lieu">
 		  </div>
