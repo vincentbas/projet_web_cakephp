@@ -7,6 +7,32 @@
         <div class="col-md-12">
         <h4>Mes Séances</h4>
         <button>Ajouter une séance</button>
+        <div>
+		   <form class="form-inline">
+		  <div class="form-group">
+		    <label class="sr-only" for="email">Sport:</label>
+		    <input type="text" class="form-control" id="sport">
+		  </div>
+		  <div class="form-group">
+		    <label class="sr-only" for="pwd">Date de début:</label>
+		    <input type="date" class="form-control" id="date_debut">
+		  </div>
+		  <div class="form-group">
+		    <label class="sr-only" for="pwd">Date de fin:</label>
+		    <input type="date" class="form-control" id="date_fin">
+		  </div>
+		  <div class="form-group">
+		    <label class="sr-only" for="pwd">Lieu:</label>
+		    <input type="text" class="form-control" id="lieu">
+		  </div>
+		  <div class="form-group">
+		    <label class="sr-only" for="pwd">Description:</label>
+		    <input type="text" class="form-control" id="description">
+		  </div>
+
+		  <button type="submit" class="btn btn-default">Ajouter</button>
+		</form>
+        </div>
         <div class="table-responsive">
 
 
