@@ -1,20 +1,34 @@
 <section class="container">
-	<div class="col-md-12 text-center">
-            <div class="card">
-                <div>
-                    <div>
-                        <?= $this->Form->create("Devices") ?>
-                            <fieldset>
-                                <?= $this->Form->input('serial') ?>
-                                <?= $this->Form->input('description') ?>
-                                <?= $this->Form->input('trusted') ?>
-                            </fieldset>
-                            <?= $this->Form->submit('Ajouter', array('class' => 'btn btn-default margin-top')); ?>
-                        <?= $this->Form->end() ?>
-                    </div>
-                </div>
-            </div>
-    </div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-device">
+				<h2 class="form-device-heading">Ajouter un Device</h2>
+				<div class="device-wrap">
+						<?= $this->Form->create("Devices"); ?>
+							<?= $this->Form->input('member_id', ['type' => 'text', 'label' => false, 'value'=>$this->request->Session()->read('Auth.User.id')]) ?>
+							<?= $this->Form->input('serial', ['type' => 'text', 'label' => false, 'placeholder' => 'Serial']) ?>
+							<?= $this->Form->input('description',['type' => 'text', 'label' => false, 'placeholder' => 'Description']) ?>
+							<?= $this->Form->input('trusted',['label' => false, 'placeholder' => 'Trusted']) ?>
+							<br>
+							<?= $this->Form->submit('Ajouter', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'ajouter')); ?>
+							<?= $this->Form->end(); ?>
+	      </div>
+	    </div>
+	  </div>
+
+		<div class="col-md-6">
+			<div class="form-device">
+				<h2 class="form-device-heading">Supprimer un Device</h2>
+				<div class="device-wrap">
+						<?= $this->Form->create("Devices"); ?>
+							<?= $this->Form->input('id', ['type' => 'text', 'label' => false, 'text', 'placeholder' => 'Supprimer id',]) ?>
+							<br>
+							<?= $this->Form->submit('Supprimer', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'supprimer')); ?>
+							<?= $this->Form->end(); ?>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div>
 		<h2>
 			Tous mes appareils :

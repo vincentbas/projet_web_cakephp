@@ -14,33 +14,40 @@ class DevicesController extends AppController
 		$this->Set("ws",$w->toArray());
 
       if ($this->request->is("post")){
-        $serial=$this->request->data["serial"];
-        $description=$this->request->data["description"];
-        $trusted=$this->request->data["trusted"];
-        $this->Devices->addobjets($serial, $description, $trusted);
+        if(isset($_POST['ajouter'])){
+          $member_id=$this->request->data["member_id"];
+          $serial=$this->request->data["serial"];
+          $description=$this->request->data["description"];
+          $trusted=$this->request->data["trusted"];
+          $this->Devices->addobjets($member_id, $serial, $description, $trusted);
+        }
+        elseif(isset($_POST['supprimer'])){
+          // Dans un controller.
+          $id=$this->request->data["id"];
+          $this->Devices->suppobjets($id);
+        }
       }
     }
 
-	  function addobjets()
+	  /*function addobjets()
 	  {
 			//1
 			$id=1;
-			//if(!$id)$this->redirect(index);
-      echo"dddd";
 
 			//2
 			$this->loadModel("Devices");
-			if ($this->request->is("post")){
-				$serial=$this->request->data["serial"];
-				$description=$this->request->data["description"];
-				$trusted=$this->request->data["trusted"];
-				$this->Devices->addobjets($serial, $description, $trusted);
-			}
-
+      if(!$id)$this->redirect(index);
+  			if ($this->request->is("post")){
+  				$serial=$this->request->data["serial"];
+  				$description=$this->request->data["description"];
+  				$trusted=$this->request->data["trusted"];
+  				$this->Devices->addobjets($serial, $description, $trusted);
+  			}
+      }
 			//3
 			$obj=$this->Devices->myobjets($id);
 			$this->set("obj",$obj);
-		}
+		}*/
 
 
 }
