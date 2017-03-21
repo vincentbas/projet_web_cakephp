@@ -3,34 +3,48 @@
 <div id="seances" class="container">
 	<div class="row">
 
+	<?php echo $this->Form->create();
+ ?>
 
         <div class="col-md-12">
         <h4>Mes Séances</h4>
         <details>
 		  <summary id="ajout">Cliquez pour ajouter une séance</summary>
-        
+        <br>
         <section id="formulaire">
 
 		   <form class="form-inline">
 		  <div class="form-group">
-		    <label class="sr-only" for="email">Sport:</label>
-		    <input type="text" class="form-control" id="sport">
+		    <input type="text" class="form-control" placeholder="Sport" id="sport">
 		  </div>
-		  <div class="form-group">
-		    <label class="sr-only" for="pwd">Date de début:</label>
+
+		  <div id="form_un" class="col-md-4">
+		    <h5 >Début de la séance : </h5>
+		  </div>
+
+		  <div id="form_un" class="col-md-4">
 		    <input type="date" class="form-control" id="date_debut">
 		  </div>
-		  <div class="form-group">
-		    <label class="sr-only" for="pwd">Date de fin:</label>
+
+		  <div id="form_un" class="col-md-4">
+		    <input type="time" class="form-control" id="time_debut">
+		  </div>
+
+		  <div id="form_un" class="col-md-4">
+		    <h5 >Fin de la séance : </h5>
+		  </div>
+		  <div id="form_un" class="col-md-4">
 		    <input type="date" class="form-control" id="date_fin">
 		  </div>
+		  <div id="form_un" class="col-md-4">
+		    <input type="time" class="form-control" id="time_fin">
+		  </div>
 		  <div class="form-group">
-		    <label class="sr-only" for="pwd">Lieu:</label>
-		    <input type="text" class="form-control" id="lieu">
+		    <input type="text" class="form-control" placeholder="Lieu" id="lieu">
 		  </div>
 		  <div class="form-group">
 		    <label class="sr-only" for="pwd">Description:</label>
-		    <input type="text" class="form-control" id="description">
+		    <input type="text" class="form-control" placeholder="Description" id="description">
 		  </div>
 
 		  <button type="submit" class="btn btn-default">Ajouter</button>
