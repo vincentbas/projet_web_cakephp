@@ -11,13 +11,12 @@ class WorkoutsTable extends Table
         return $this->Workouts->find()->where(["member_id"=>$par1])->toArray();
     }
 
-    public function addworkouts($id,$member_id, $date,$date_end, $description, $location_name,$sport,$contest_id)
+    public function addobjets($member_id, $date_start,$date_end, $location_name, $description ,$sport, $contest_id)
     {
     	$new=$this->newEntity();
-    	$new->id=$id;
-    	$new->date=$date;
+    	$new->date=$date_start;
       	$new->member_id=$member_id;
-    	$new->end_date=$end_date;
+    	$new->end_date=$date_end;
     	$new->description=$description;
     	$new->location_name=$location_name;
     	$new->sport=$sport;

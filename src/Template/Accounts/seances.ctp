@@ -13,9 +13,9 @@
         <br>
         <section id="formulaire">
 
-		   <form class="form-inline">
+		  <form method="post" accept-charset="utf-8" action="/projet_web_ocres/accounts/seances" class="form-inline">
 		  <div class="form-group">
-		    <input type="text" class="form-control" placeholder="Sport" id="sport">
+		    <input type="text" class="form-control" placeholder="Sport" id="sport" name="sport">
 		  </div>
 
 		  <div class="row">
@@ -24,11 +24,7 @@
         </div>
         
         <div id="form_un" class="col-md-5">
-          <input type="date" class="form-control" id="date_debut">
-        </div>
-        
-        <div id="form_un" class="col-md-5">
-          <input type="time" class="form-control" id="time_debut">
+          <input type="datetime-local" class="form-control" id="date_debut" name="date_start">
         </div>
       </div>
 
@@ -37,21 +33,18 @@
           <h5 >Fin de la séance : </h5>
         </div>
         <div id="form_un" style="margin-top: 15px;" class="col-md-5">
-          <input type="date" class="form-control" id="date_fin">
-        </div>
-        <div id="form_un" style="margin-top: 15px;" class="col-md-5">
-          <input type="time" class="form-control" id="time_fin">
+          <input type="datetime-local" class="form-control" id="date_fin" name="date_end">
         </div>
       </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" placeholder="Lieu" id="lieu">
+		    <input type="text" class="form-control" placeholder="Lieu" id="lieu" name="location_name">
 		  </div>
 		  <div class="form-group">
 		    <label class="sr-only" for="pwd">Description:</label>
-		    <input type="text" class="form-control" placeholder="Description" id="description">
+		    <input type="text" class="form-control" placeholder="Description" id="description" name="description">
 		  </div>
 
-		  <button type="submit" class="btn btn-default">Ajouter</button>
+		  <button type="submit" class="btn btn-default" name="ajouter">Ajouter</button>
 		</form>
 		
         </section>

@@ -63,7 +63,6 @@ class AccountsController extends AppController
         $this->loadModel("Workouts");
         //Va chercher toutes les séances
         $workouts = $this->Workouts->find("all");
-        dd($workouts);
     }
     function seances()
     {
@@ -73,19 +72,17 @@ class AccountsController extends AppController
         $this->Set("ws",$w->toArray());
 
         if ($this->request->is("post")){
-        if(isset($_POST['ajouter'])){
-          $number=$number++;
-          $member_id=$this->request->data["member_id"];
-          $location=$this->request->data["location_name"];
-          $description=$this->request->data["description"];
-          $sport=$this->request->data["sport"];
-          $date=$this->request->data["date"];
-          $date_end=$this->request->data["date_end"];
-          $contest_id=$this->request->data["contest_id"];
+            if(isset($_POST['ajouter'])){
+              $member_id=$this->request->Session()->read('Auth.User.id');
+              $location=$this->request->data["location_name"];
+              $description=$this->request->data["description"];
+              $sport=$this->request->data["sport"];
+              $date_start=$this->request->data["date_start"];
+              $date_end=$this->request->data["date_end"];
+              $contest_id=null;
 
-
-          $this->Workouts->addobjets($id,$member_id, $date,$date_end, $description, $location_name,$contest_id);
-        }
+              $this->Workouts->addobjets($member_id, $date_start,$date_end, $location, $description, $sport, $contest_id);
+            }
         /*elseif(isset($_POST['supprimer'])){
           // Dans un controller.
           $id=$this->request->data["id"];
