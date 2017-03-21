@@ -248,11 +248,7 @@
                       <div class="col-lg-12">
                       </div><!-- /row -->
 
-<<<<<<< HEAD
-                  </div>
-=======
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
->>>>>>> b5ccf1cc7cbc4fd160d9efe943ef382eea6ccf31
               </div>
 
     <div class="container clearfix">
