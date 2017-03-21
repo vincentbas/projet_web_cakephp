@@ -89,7 +89,16 @@ class AccountsController extends AppController
 
     function edit()
     {
-    
+        if ($this->request->is('post')) {
+            if(!empty($this->request->data['avatar_file'])){
+                $image = $this->request->data['avatar_file'];
+                $extension = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
+                
+                if(in_array($extension, array('jpg', 'jpeg', 'png', 'gif'))){
+                    move_uploaded_file($image['tmp_name'], IMAGES .'profils'. DS . $this->Member->email);
+                }
+            }
+        }
     }
 
 }
