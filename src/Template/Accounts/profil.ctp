@@ -15,6 +15,10 @@
     ?>
     	 
 	</div>
+    <button class="edit-button">
+        <?= $this->Html->link('<i class="fa fa-pencil" style="margin-right:5px;"></i><span>Edit</span>', ['controller' => 'Accounts', 'action' => 'edit'], ['escape'=>false]) ?>
+    </button>
+        
     	 <h3><?= $this->request->Session()->read('Auth.User.email'); ?></h3>
 			<br><br><br><br>
 

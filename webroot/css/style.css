@@ -2361,4 +2361,20 @@ li
     justify-content: space-between;
 }
 
+.edit-button{
+    background-color: #424A5D; 
+    border: none;
+    margin-top: 15px;
+}
+
+.edit-button a:hover{
+    text-decoration: none;
+    color: white;
+}
+.message.error{
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
 /*End Page Présentation*/

@@ -10,6 +10,6 @@ class IndexController extends AppController
 {
     public function view()
     {
-        "coucou";
+        $this->render();
     }
 }
