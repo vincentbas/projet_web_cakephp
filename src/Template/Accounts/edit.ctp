@@ -13,3 +13,4 @@
 		<?= $this->Form->end(); ?>
 	</div>
 </div>
+<?php echo $this->Flash->render('error') ?>

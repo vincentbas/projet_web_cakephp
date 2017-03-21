@@ -6196,14 +6196,14 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-input[type="email"], input[type="password"]{
+input[type="email"], input[type="password"], input[type="text"]{
   padding: 10px;
   width: 100%;
   border-radius: 7px;
   border: 1px solid #797979;
 }
 
-input[type="password"]{
+input[type="password"],.device-wrap input[type="text"]{
   margin-top: 10px;
 }
 
