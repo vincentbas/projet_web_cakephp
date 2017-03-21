@@ -8,7 +8,7 @@ class AccountsController extends AppController
 	//page A.1 Présentation
     function presentation()
     {
-		
+
     }
     //page Profil
     function profil()
@@ -26,37 +26,37 @@ class AccountsController extends AppController
 	//page A.2 Equipe
     function equipe()
     {
-		
+
     }
 	//page A.3 Utilisation
     function utilisation()
     {
-		
+
     }
 	//page B.1 Statistiques
     function statistiques()
     {
-		
+
     }
 	//page B.2 Badges
     function badges()
     {
-		
+
     }
 	//page C.1 Calendrier
     function calendrier()
     {
-		
+
     }
 	//page C.2 Entraînements
     function entrainements()
     {
-		
+
     }
 	//page D Classement
     function classement()
     {
-		
+
     }
     function seances()
     {
@@ -69,16 +69,34 @@ class AccountsController extends AppController
 	//page F Mentions Légales
     function mentions()
     {
-		
+
     }
 	//page G FAQ
     function faq()
     {
-		
+
     }
 	//page H CNIL
     function cnil()
     {
-		
+
     }
+  //page H CNIL
+    function localisation()
+    {
+
+    }
+
+    function edit()
+    {
+        if ($this->request->is('post')) {
+            if(!empty($this->request->data['avatar_file'])){
+                $image = $this->request->data['avatar_file'];
+                if(in_array($extension, array('jpg'))){
+                    move_uploaded_file($image['tmp_name'], $this->webroot .'img/profils/' . $this->request->Session()->read('Auth.User.id').'.'. $jpg);
+                }
+            }
+        }
+    }
+
 }

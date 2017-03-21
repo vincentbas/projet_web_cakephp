@@ -50,4 +50,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->fallbacks(DashedRoute::class);
 });
 
+Router::scope('/accounts', function (RouteBuilder $routes){
+	$routes->connect('/profil/edit', ['controller' => 'Accounts', 'action' => 'edit']);
+});
+
 Plugin::routes();

@@ -2196,9 +2196,12 @@ label {
 
 /*footer*/
 .site-footer {
-    background: #B4DBC0;
+    background: #69B07F;
     color: #fff;
     padding: 10px 0;
+    position:fixed;
+    bottom:0;
+    width:100%;
 }
 
 
@@ -2327,6 +2330,11 @@ li
     width: 200px;
 }
 
-
+.edit-photo-form{
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 /*End Page Présentation*/

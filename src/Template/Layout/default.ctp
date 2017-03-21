@@ -240,28 +240,36 @@
               <div class="col-lg-12">
                   <div class="col-lg-12 main-chart">
                       <div class="col-lg-12">
-
                       </div><!-- /row -->
 
+                      <div class="col-lg-12">
+                      </div><!-- /row -->
 
-          <div class="col-lg-12">
-
-          </div><!-- /row -->
-
-          <div class="col-lg-12">
-
-          </div><!-- /row -->
+                      <div class="col-lg-12">
+                      </div><!-- /row -->
 
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
               </div>
 
-    <div class="container clearfix"">
+    <div class="container clearfix">
       <?php echo $this->fetch("content");?>
     </div>
-    <!-- /.container -->
 
   </section>
-      <!--sidebar end-->
+  <footer class="site-footer">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="copyright">© 2017, @SportManager, All rights reserved
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="design">
+           <?= $this->Html->link('Contact', ['controller' => 'Accounts', 'action' => 'contact'], ['escape'=>false]) ?> | <?= $this->Html->link('Mentions Légales', ['controller' => 'Accounts', 'action' => 'mentions'], ['escape'=>false]) ?> | <?= $this->Html->link('FAQ', ['controller' => 'Accounts', 'action' => 'faq'], ['escape'=>false]) ?> | <?= $this->Html->link('CNIL', ['controller' => 'Accounts', 'action' => 'cnil'], ['escape'=>false]) ?>
+        </div>
+      </div>
+    </div>
+</footer>
+
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
