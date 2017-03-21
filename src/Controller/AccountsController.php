@@ -56,7 +56,9 @@ class AccountsController extends AppController
 	//page D Classement
     function classement()
     {
-
+        $this->loadModel("Workouts");
+        $workouts = $this->Workouts->find("all");
+        dd($workouts);
     }
     function seances()
     {
@@ -89,22 +91,32 @@ class AccountsController extends AppController
 
     function edit()
     {
+        //Si le formulaire a été envoyé
         if ($this->request->is('post')) {
+            //Si il y a bien un fichier d'uploadé
             if(!empty($this->request->data['avatar_file'])){
+                //On stock l'image et son extension
                 $image = $this->request->data['avatar_file'];
                 $extension = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
+                //Si l'extension est bien jpg
                 if(in_array($extension, array('jpg'))){
+                    //On initialise le chemin voulu pour stocker l'image
                     $path = $this->webroot .'img/profils/' . $this->request->Session()->read('Auth.User.id').'.jpg';
+                    //Si l'utilisateur a déjà une photo de profil
                     if(file_exists($path)){
+                        //On la supprime
                         unlink($path);
                     }
+                    //On déplace l'image dans le chemin voulu
                     move_uploaded_file($image['tmp_name'], $path);
+                    //L'utilisateur est redirigé vers son profil
                     $this->redirect(array(
                         'controller' => 'accounts',
                         'action' => 'profil')
                     );
 
                 }else{
+                    //Messages d'erreurs si quelque chose n'a pas marché
                 $this->Flash->error("Erreur lors de l'importation de votre fichier (Fichiers autorisés < 2Mo et format jpg)", array(
                     'key' => 'error'
                 ));
