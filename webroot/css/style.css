@@ -2330,6 +2330,11 @@ li
     width: 200px;
 }
 
-
+.edit-photo-form{
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 /*End Page Présentation*/

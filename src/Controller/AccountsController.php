@@ -87,4 +87,9 @@ class AccountsController extends AppController
 
     }
 
+    function edit()
+    {
+    
+    }
+
 }
