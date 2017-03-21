@@ -1,8 +1,19 @@
 <div class="centered donut-chart">
     <div class="row mt">
-    	<?= $this->Html->image('profils/'.$this->request->Session()->read('Auth.User.id').'.jpg', array('class' => 'avatar', 
-    												'alt' => 'profil',
-    												'url' => array('controller' => 'Accounts', 'action' => 'profil'))); ?>
+        <?php 
+        if(file_exists(WWW_ROOT.'img'. DS . 'profils'. DS . $this->request->Session()->read('Auth.User.id').'.'.'jpg')){
+            echo($this->Html->image('profils/'.$this->request->Session()->read('Auth.User.id').'.jpg', array('class' => 'avatar', 
+                                                    'alt' => 'profil',
+                                                    'url' => array('controller' => 'Accounts', 'action' => 'profil'))));
+        }else{
+            echo($this->Html->image('profils/default.jpg', array('class' => 'avatar', 
+                                                    'alt' => 'profil',
+                                                    'style' => 'height:200px;',
+                                                    'url' => array('controller' => 'Accounts', 'action' => 'profil'))));
+        }
+        
+    ?>
+    	 
 	</div>
     	 <h3><?= $this->request->Session()->read('Auth.User.email'); ?></h3>
 			<br><br><br><br>
