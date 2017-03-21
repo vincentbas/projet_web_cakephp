@@ -92,11 +92,21 @@ class AccountsController extends AppController
         if ($this->request->is('post')) {
             if(!empty($this->request->data['avatar_file'])){
                 $image = $this->request->data['avatar_file'];
-                if(in_array($extension, array('jpg'))){
-                    move_uploaded_file($image['tmp_name'], $this->webroot .'img/profils/' . $this->request->Session()->read('Auth.User.id').'.'. $jpg);
+                if(in_array('jpg', array('jpg'))){
+                    $path = $this->webroot .'img/profils/' . $this->request->Session()->read('Auth.User.id').'.jpg';
+                    if(file_exists($path)){
+                        unlink($path);
+                    }
+                    move_uploaded_file($image['tmp_name'], $path);
+                    $this->redirect(array(
+                        'controller' => 'accounts',
+                        'action' => 'profil')
+                    );
+
                 }
             }
         }
+
     }
 
 }
