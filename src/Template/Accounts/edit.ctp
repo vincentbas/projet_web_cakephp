@@ -2,8 +2,7 @@
 	<div class="login-wrap">
 		<?= $this->Form->create('Member', ['type' => 'file', 'class' => 'edit-photo-form']); ?>
 		<?= $this->Form->input('avatar_file', ['type' => 'file', 'label' => 'Importez votre photo (JPG ou PNG)']);?>
-		<?= $this->Form->input('email', array('label' => 'addresse email actuelle'));?>
-		<?= $this->Form->input('email_new', array('label' => 'nouvelle addresse email'));?>
+		<?= $this->Form->input('email_new', array('label' => 'addresse email'));?>
 		<?= $this->Form->input('password', array('type' => 'password',
 												'label' => 'Mot de passe actuel'));?>
 		<?= $this->Form->input('password_new', array('type' => 'password',
