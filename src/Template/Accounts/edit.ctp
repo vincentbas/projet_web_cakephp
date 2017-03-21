@@ -7,3 +7,4 @@
 	
 	</div>
 </div>
+<?php echo $this->Flash->render('error') ?>

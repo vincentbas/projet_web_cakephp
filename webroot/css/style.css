@@ -2234,6 +2234,30 @@ header{
     justify-content: space-between;
 }
 
+/*Form Device*/
+.form-device {
+	background: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.form-device h2.form-device-heading {
+	margin: 0;
+	padding: 25px 20px;
+	text-align: center;
+	background: #B4DBC0;
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+.device-wrap {
+	padding: 20px;
+}
+/*EndForm Device*/
+
 /*Page Team*/
 .container{
   width:100%!important;
@@ -2347,10 +2371,18 @@ li
     text-decoration: none;
     color: white;
 }
+<<<<<<< HEAD
 
 #form_un{
     border-bottom: 1px solid #eff2f7;
     padding-bottom: 15px;
     margin-bottom: 15px;
+=======
+.message.error{
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+>>>>>>> f6a16cffd33aadaa18c717b52a627d7725b22f83
 }
 /*End Page Présentation*/
