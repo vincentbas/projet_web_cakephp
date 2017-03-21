@@ -92,7 +92,8 @@ class AccountsController extends AppController
         if ($this->request->is('post')) {
             if(!empty($this->request->data['avatar_file'])){
                 $image = $this->request->data['avatar_file'];
-                if(in_array('jpg', array('jpg'))){
+                $extension = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
+                if(in_array($extension, array('jpg'))){
                     $path = $this->webroot .'img/profils/' . $this->request->Session()->read('Auth.User.id').'.jpg';
                     if(file_exists($path)){
                         unlink($path);
@@ -103,7 +104,15 @@ class AccountsController extends AppController
                         'action' => 'profil')
                     );
 
-                }
+                }else{
+                $this->Flash->error("Erreur lors de l'importation de votre fichier (Fichiers autorisés < 2Mo et format jpg)", array(
+                    'key' => 'error'
+                ));
+            }
+            }else{
+                $this->Flash->error("Erreur lors de l'importation de votre fichier (Fichiers autorisés < 2Mo et format jpg)", array(
+                    'key' => 'error'
+                ));
             }
         }
 
