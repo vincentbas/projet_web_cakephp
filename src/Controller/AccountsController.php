@@ -59,16 +59,36 @@ class AccountsController extends AppController
 	//page D Classement
     function classement()
     {
+        //Charge le model "Workouts"
         $this->loadModel("Workouts");
+        //Va chercher toutes les séances
         $workouts = $this->Workouts->find("all");
-        dd($workouts);
     }
     function seances()
     {
 
         $this->loadModel("Workouts");
-        $w = $this->Workouts->find();
+        $w = $this->Workouts->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
         $this->Set("ws",$w->toArray());
+
+        if ($this->request->is("post")){
+            if(isset($_POST['ajouter'])){
+              $member_id=$this->request->Session()->read('Auth.User.id');
+              $location=$this->request->data["location_name"];
+              $description=$this->request->data["description"];
+              $sport=$this->request->data["sport"];
+              $date_start=$this->request->data["date_start"];
+              $date_end=$this->request->data["date_end"];
+              $contest_id=null;
+
+              $this->Workouts->addobjets($member_id, $date_start,$date_end, $location, $description, $sport, $contest_id);
+            }
+        /*elseif(isset($_POST['supprimer'])){
+          // Dans un controller.
+          $id=$this->request->data["id"];
+          $this->Workouts->suppobjets($id);
+        }*/
+      }
 
     }
 	//page F Mentions Légales
@@ -129,7 +149,8 @@ class AccountsController extends AppController
                     'key' => 'error'
                 ));
             }
-            else{
+        }
+        else{
 
             }
 
@@ -153,7 +174,4 @@ class AccountsController extends AppController
         }
 
     }
-}
-
-
 }
