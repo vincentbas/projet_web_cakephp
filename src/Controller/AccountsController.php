@@ -100,7 +100,7 @@ class AccountsController extends AppController
 	//page G FAQ
     function faq()
     {
-
+        
     }
     function details($id_workouts)
     {
