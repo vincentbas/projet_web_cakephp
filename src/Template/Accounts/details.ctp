@@ -11,13 +11,15 @@
         <br>
           <?= $this->Form->create("Workouts"); ?>
            <?= $this->Form->hidden('id',['value'=>$current->id]); ?>
-                      <?= $this->Form->input('member_id', ['type' => 'text', 'label' => false, 'value'=>$this->request->Session()->read('Auth.User.id')]) ?>
+                      <?= $this->Form->input('member_id', ['value'=>$this->request->Session()->read('Auth.User.id')]) ?>
 
-                      <?= $this->Form->input('serial', ['type' => 'text', 'label' => false, 'placeholder' => 'Serial']) ?>
-                      <?= $this->Form->input('description',['type' => 'text', 'label' => false, 'placeholder' => 'Description']) ?>
-                      <?= $this->Form->input('trusted',['label' => false, 'placeholder' => 'Trusted']) ?>
+                      <?= $this->Form->input('date', ["value" => $current->date]) ?>
+                      <?= $this->Form->input('end_date',["value" => $current->end_date]) ?>
+                      <?= $this->Form->input('description',["value" => $current->description]) ?>
+                      <?= $this->Form->input('location_name',["value" => $current->location_name]) ?>
+                      <?= $this->Form->input('contest_id',["value" => $current->contest_id]) ?>
                       <br>
-                      <?= $this->Form->submit('Ajouter', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'ajouter')); ?>
+                      <?= $this->Form->submit('Editer', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'Editer')); ?>
                       <?= $this->Form->end(); ?>
         
         </details>
