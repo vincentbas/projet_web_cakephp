@@ -66,11 +66,17 @@ class MembersTable extends Table
         return $rules;
     }
 
-    public function edit($id, $email, $password)
+    public function updateProfile($profile, $email, $password_new)
     {
-        $m = $this->get($id);
-        $m->email = $email;
-        $m->password = $password;
-        $this->save($m);
+        $m = $this->get($profile->id);
+        if(!empty($email) || !empty($password)){
+            if($email != $m->email){
+                $m->email = $email;
+            }
+            if(!empty($password_new)){
+                $m->password = $password_new;
+            }
+            $this->save($m);
+        }
     }
 }
