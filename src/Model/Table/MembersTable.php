@@ -63,7 +63,14 @@ class MembersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['email']));
-
         return $rules;
+    }
+
+    public function edit($id, $email, $password)
+    {
+        $m = $this->get($id);
+        $m->$email = $email;
+        $m->$password = $password;
+        $this->save($m);
     }
 }

@@ -2355,10 +2355,18 @@ li
 }
 
 .edit-photo-form{
-    height: 120px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.edit-photo-form .submit{
+    margin-top: 20px;
+}
+
+.edit-photo-form label{
+    margin-top: 10px;
 }
 
 .edit-button{
@@ -2371,18 +2379,15 @@ li
     text-decoration: none;
     color: white;
 }
-<<<<<<< HEAD
+
 
 #form_un{
     border-bottom: 1px solid #eff2f7;
     padding-bottom: 15px;
     margin-bottom: 15px;
-=======
-.message.error{
     color: red;
     display: flex;
     justify-content: center;
     margin-top: 15px;
->>>>>>> f6a16cffd33aadaa18c717b52a627d7725b22f83
 }
 /*End Page Présentation*/
