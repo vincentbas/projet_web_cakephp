@@ -69,8 +69,8 @@ class MembersTable extends Table
     public function edit($id, $email, $password)
     {
         $m = $this->get($id);
-        $m->$email = $email;
-        $m->$password = $password;
+        $m->email = $email;
+        $m->password = $password;
         $this->save($m);
     }
 }

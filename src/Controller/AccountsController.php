@@ -16,14 +16,13 @@ class AccountsController extends AppController
     {
         $uid = $this->Auth->user('id');
 
-        $this->loadModel('Workouts');
-        $this->set('Workouts', $this->Workouts->find('all')
-             ->where(['member_id' => $uid]));
+        $this->loadModel('Members');
+        $u = $this->Members->find()->where(["id"=>$uid]);
+        $this->set("user", $u->toArray()[0]);
 
         $this->loadModel('Stickers');
         $stickersNames = $this->Stickers->getStickerName($uid);
         $this->set('Stickers',$stickersNames);
-
 
     }
 	//page A.2 Equipe
