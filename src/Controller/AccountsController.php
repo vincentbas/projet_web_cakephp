@@ -67,10 +67,8 @@ class AccountsController extends AppController
     function seances()
     {
 
-        $this->loadModel("Workouts");
-        $w = $this->Workouts->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
-        $this->Set("ws",$w->toArray());
-
+        
+         $this->loadModel("Workouts");
         if ($this->request->is("post")){
             if(isset($_POST['ajouter'])){
               $member_id=$this->request->Session()->read('Auth.User.id');
@@ -83,13 +81,16 @@ class AccountsController extends AppController
 
               $this->Workouts->addobjets($member_id, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }
+           
+            
         /*elseif(isset($_POST['supprimer'])){
           // Dans un controller.
           $id=$this->request->data["id"];
           $this->Workouts->suppobjets($id);
         }*/
       }
-
+      $w = $this->Workouts->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
+            $this->Set("ws",$w->toArray());
     }
 	//page F Mentions Légales
     function mentions()
@@ -99,6 +100,25 @@ class AccountsController extends AppController
 	//page G FAQ
     function faq()
     {
+
+    }
+    function details($id_workouts)
+    {
+        $this->loadModel("Workouts");
+        if ($this->request->is("post")){
+            if(isset($_POST['ajouter'])){
+              $member_id=$this->request->Session()->read('Auth.User.id');
+              $location=$this->request->data["location_name"];
+              $description=$this->request->data["description"];
+              $sport=$this->request->data["sport"];
+              $date_start=$this->request->data["date_start"];
+              $date_end=$this->request->data["date_end"];
+              $contest_id=null;
+
+              $this->Workouts->editobjets($id_workouts, $date_start,$date_end, $location, $description, $sport, $contest_id);
+            }
+            }
+            $this->set("current",$this->Workouts->get($id_workouts));
 
     }
 	//page H CNIL
