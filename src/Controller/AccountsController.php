@@ -102,6 +102,25 @@ class AccountsController extends AppController
     {
 
     }
+    function details($id_workouts)
+    {
+        $this->loadModel("Workouts");
+        if ($this->request->is("post")){
+            if(isset($_POST['ajouter'])){
+              $member_id=$this->request->Session()->read('Auth.User.id');
+              $location=$this->request->data["location_name"];
+              $description=$this->request->data["description"];
+              $sport=$this->request->data["sport"];
+              $date_start=$this->request->data["date_start"];
+              $date_end=$this->request->data["date_end"];
+              $contest_id=null;
+
+              $this->Workouts->editobjets($id_workouts, $date_start,$date_end, $location, $description, $sport, $contest_id);
+            }
+            }
+            $this->set("current",$this->Workouts->get($id_workouts));
+
+    }
 	//page H CNIL
     function cnil()
     {
