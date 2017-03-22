@@ -21,8 +21,8 @@ class DevicesTable extends Table
     }
     public function suppobjets($id)
     {
-      $entity = $this->Devices->get($id);
-      $result = $this->Devices->delete($entity);
+      $entity = $this->get($id);
+      $result = $this->delete($entity);
     }
 
 

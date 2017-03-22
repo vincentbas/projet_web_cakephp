@@ -64,10 +64,10 @@ class MembersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['email']));
-
         return $rules;
     }
 
+<<<<<<< HEAD
     public function getNewPassword($email)
     {
         $members = TableRegistry::get("Members");
@@ -88,5 +88,19 @@ class MembersTable extends Table
             $this->save($ad);
             return $newpass;
 
+=======
+    public function updateProfile($profile, $email, $password_new)
+    {
+        $m = $this->get($profile->id);
+        if(!empty($email) || !empty($password)){
+            if($email != $m->email){
+                $m->email = $email;
+            }
+            if(!empty($password_new)){
+                $m->password = $password_new;
+            }
+            $this->save($m);
+        }
+>>>>>>> eaa667ddbc24b9fc7aa698e438c378b6951242c7
     }
 }

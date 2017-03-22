@@ -214,7 +214,6 @@
               <ul class="sidebar-menu" id="nav-accordion">
 
                   <!--<p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>-->
-                  <h5 class="centered"><?= $this->request->Session()->read('Auth.User.email'); ?></h5>
 
                   <li class="mt">
                       <?= $this->Html->link('<i class="fa fa-dashboard"></i><span>Dashboard</span>', ['controller' => 'Accounts', 'action' => 'profil'], ['escape'=>false]) ?>

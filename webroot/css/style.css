@@ -2361,8 +2361,16 @@ li
     justify-content: space-between;
 }
 
+.edit-photo-form .submit{
+    margin-top: 20px;
+}
+
+.edit-photo-form label{
+    margin-top: 10px;
+}
+
 .edit-button{
-    background-color: #424A5D; 
+    background-color: #424A5D;
     border: none;
     margin-top: 15px;
 }
@@ -2372,10 +2380,14 @@ li
     color: white;
 }
 
+
 #form_un{
     border-bottom: 1px solid #eff2f7;
     padding-bottom: 15px;
     margin-bottom: 15px;
+  }
+
+
 }
 
 
@@ -2388,13 +2400,10 @@ li
 {
     color: black;
 }
-
 .message.error{
     color: red;
     display: flex;
     justify-content: center;
     margin-top: 15px;
-
 }
 /*End Page Présentation*/
-

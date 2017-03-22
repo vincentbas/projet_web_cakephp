@@ -16,14 +16,17 @@ class AccountsController extends AppController
     {
         $uid = $this->Auth->user('id');
 
+        $this->loadModel('Members');
+        $u = $this->Members->find()->where(["id"=>$uid]);
+        $this->set("user", $u->toArray()[0]);
+
         $this->loadModel('Workouts');
-        $this->set('Workouts', $this->Workouts->find('all')
-             ->where(['member_id' => $uid]));
+        $w = $this->Workouts->find()->where(["member_id"=>$uid]);
+        $this->set("workouts", $w->toArray());
 
         $this->loadModel('Stickers');
         $stickersNames = $this->Stickers->getStickerName($uid);
         $this->set('Stickers',$stickersNames);
-
 
     }
 	//page A.2 Equipe
@@ -100,7 +103,7 @@ class AccountsController extends AppController
 	//page G FAQ
     function faq()
     {
-
+        
     }
     function details($id_workouts)
     {
@@ -138,10 +141,12 @@ class AccountsController extends AppController
 
     function edit()
     {
-        //Si le formulaire a été envoyé
+        $this->loadModel("Members");
+        $m = $this->Members->find()->where(["id"=>$this->request->Session()->read('Auth.User.id')])->toArray()[0];
+
         if ($this->request->is('post')) {
             //Si il y a bien un fichier d'uploadé
-            if(!empty($this->request->data['avatar_file'])){
+            if($this->request->data['avatar_file']['name'] != ''){
                 //On stock l'image et son extension
                 $image = $this->request->data['avatar_file'];
                 $extension = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
@@ -157,45 +162,19 @@ class AccountsController extends AppController
                     //On déplace l'image dans le chemin voulu
                     move_uploaded_file($image['tmp_name'], $path);
                     //L'utilisateur est redirigé vers son profil
-                    $this->redirect(array(
-                        'controller' => 'accounts',
-                        'action' => 'profil')
-                    );
 
                 }else{
                     //Messages d'erreurs si quelque chose n'a pas marché
-                $this->Flash->error("Erreur lors de l'importation de votre fichier (Fichiers autorisés < 2Mo et format jpg)", array(
-                    'key' => 'error'
-                ));
+                    $this->Flash->error("Erreur lors de l'importation de votre fichier (Fichiers autorisés < 2Mo et format jpg)", array(
+                        'key' => 'error'
+                    ));
+                }
             }
-            }else{
-                $this->Flash->error("Erreur lors de l'importation de votre fichier (Fichiers autorisés < 2Mo et format jpg)", array(
-                    'key' => 'error'
-                ));
-            }
+            $this->Members->updateProfile($m, $this->request->data['email_new'],$this->request->data['password_new']);
+            $this->redirect(array(
+                'controller' => 'accounts', 'action' => 'profil'
+            ));
         }
-        else{
-
-            }
-
-            
-
-
-             if((!empty($this->request->data['email'])&&($this->request->data['email_new']))||(($this->request->data['password'])&&($this->request->data['password_new']))){
-
-                $email = $this->request->data['email'];
-                $email_new = $this->request->data['email_new'];
-                $password = $this->request->data['password'];
-                $password_new = $this->request->data['password_new'];
-
-                $tablename = TableRegistry::get('Members');
-                $query = $tablename->query();
-                $result = $query->update()
-                    ->set(['email' => $email_new])
-                    ->where(['email' => $email])
-                    ->execute();
-
-        }
-
+        $this->Set("member_info",$m);
     }
 }
