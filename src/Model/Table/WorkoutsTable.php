@@ -28,5 +28,17 @@ class WorkoutsTable extends Table
       $entity = $this->Workouts->get($id);
       $result = $this->Workouts->delete($entity);
     }
+        public function editerobjets($id, $date_start,$date_end, $location_name, $description ,$sport, $contest_id)
+    {
+        $new=$this->get($id);
+        $new->date=$date_start;
+        $new->member_id=$member_id;
+        $new->end_date=$date_end;
+        $new->description=$description;
+        $new->location_name=$location_name;
+        $new->sport=$sport;
+        $new->contest_id=$contest_id;
+        $this->save($new);
+    }
 
 }
