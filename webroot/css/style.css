@@ -2384,6 +2384,11 @@ li
     width: 25px;
 }
 
+.lien_noir
+{
+    color: black;
+}
+
 .message.error{
     color: red;
     display: flex;
