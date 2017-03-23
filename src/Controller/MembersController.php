@@ -93,12 +93,15 @@ class MembersController extends AppController
             $this->loadModel('Members');
             $email = $this->request->data['email'];             
             $newPassword = $this->Members->getNewPassword($email);
-
-           // $this->set('newPassword', $newPassword);
-            $this->Flash->success($newPassword, array(
+            $this->Flash->success('Nouveau mot de passe : '.$newPassword, array(
+                    'key' => 'new_mdp'
+                ));          
+            }
+            else
+            {
+                $this->Flash->success('Veuillez rentrer votre adresse mail', array(
                     'key' => 'new_mdp'
                 ));
-            //$this->redirect(array('controller' => 'members', 'action' => 'forgot'));
             }
         }
 

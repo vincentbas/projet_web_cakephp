@@ -67,7 +67,6 @@ class MembersTable extends Table
         return $rules;
     }
 
-<<<<<<< HEAD
     public function getNewPassword($email)
     {
         $members = TableRegistry::get("Members");
@@ -87,8 +86,8 @@ class MembersTable extends Table
             $ad->password=$newpass;
             $this->save($ad);
             return $newpass;
+    }
 
-=======
     public function updateProfile($profile, $email, $password_new)
     {
         $m = $this->get($profile->id);
@@ -101,6 +100,5 @@ class MembersTable extends Table
             }
             $this->save($m);
         }
->>>>>>> eaa667ddbc24b9fc7aa698e438c378b6951242c7
     }
 }

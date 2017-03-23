@@ -12,10 +12,11 @@
 
                     
         </div>
-        <h2 class="form-login-heading"><?php echo $this->Flash->render('new_mdp') ?></h2>
+        <h2 class="form-login-heading"><?php echo $this->Flash->render('new_mdp') ?>
+        <br>
         <div class="registration centered">
                 <?= $this->Html->link('Connexion', array('controller' => 'Members', 'action' => 'login'), array('class' => 'lien_noir'));?>
-            </div>
+            </div></h2>
       </div>
   
   </div>
