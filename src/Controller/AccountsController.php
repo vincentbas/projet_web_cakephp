@@ -69,8 +69,6 @@ class AccountsController extends AppController
     }
     function seances()
     {
-
-        
          $this->loadModel("Workouts");
         if ($this->request->is("post")){
             if(isset($_POST['ajouter'])){
@@ -180,5 +178,21 @@ class AccountsController extends AppController
             ));
         }
         $this->Set("member_info",$m);
+    }
+
+    function competitions()
+    {
+       $this->loadModel('Contests');
+
+      if ($this->request->is('post')){
+        if(($this->request->data['name'])&&($this->request->data['type'])&&($this->request->data['description'])){
+          $name=$this->request->data['name'];
+          $type=$this->request->data['type'];
+          $description=$this->request->data['description'];
+          $this->Contests->addcompetition($name, $type, $description);
+        }
+      }
+        $c=$this->Contests->find();
+        $this->Set('compet',$c->toArray());
     }
 }

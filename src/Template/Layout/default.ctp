@@ -214,11 +214,6 @@
               <ul class="sidebar-menu" id="nav-accordion">
 
                   <!--<p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>-->
-
-                  <li class="mt">
-                      <?= $this->Html->link('<i class="fa fa-dashboard"></i><span>Dashboard</span>', ['controller' => 'Accounts', 'action' => 'profil'], ['escape'=>false]) ?>
-                  </li>
-
                   <li class="sub-menu">
                       <?= $this->Html->link('<i class="fa fa-desktop"></i><span>Mon Profil</span>', ['controller' => 'Accounts', 'action' => 'profil'], ['escape'=>false]) ?>
                   </li>
@@ -227,11 +222,17 @@
                       <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Séances</span>', ['controller' => 'Accounts', 'action' => 'seances'], ['escape'=>false]) ?>
 
                   </li>
+                   <li class="sub-menu">
+                      <?= $this->Html->link('<i class="fa fa-soccer-ball-o"></i><span>Compétitions</span>', ['controller' => 'Accounts', 'action' => 'competitions'], ['escape'=>false]) ?>
+                  </li>
                   <li class="sub-menu">
                       <?= $this->Html->link('<i class="fa fa-book"></i><span>Classement</span>', ['controller' => 'Accounts', 'action' => 'classement'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
                       <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Objets Connectés</span>', ['controller' => 'Devices', 'action' => 'objetsco'], ['escape'=>false]) ?>
+                  </li>
+                  <li class="sub-menu">
+                      <?= $this->Html->link('<i class="fa fa-map-o"></i><span>Localisation</span>', ['controller' => 'Accounts', 'action' => 'Localisation'], ['escape'=>false]) ?>
                   </li>
               </ul>
               <!-- sidebar menu end-->
