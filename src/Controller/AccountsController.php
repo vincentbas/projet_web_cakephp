@@ -21,12 +21,16 @@ class AccountsController extends AppController
         $this->set("user", $u->toArray()[0]);
 
         $this->loadModel('Workouts');
-        $w = $this->Workouts->find()->where(["member_id"=>$uid]);
+        $w = $this->Workouts->find()->where(['member_id' => $uid])->group(['sport']);
         $this->set("workouts", $w->toArray());
 
-        $this->loadModel('Stickers');
+       /* $this->loadModel('Stickers');
         $stickersNames = $this->Stickers->getStickerName($uid);
-        $this->set('Stickers',$stickersNames);
+        $this->set('Stickers',$stickersNames);*/
+
+        $this->loadModel('Contests');
+        $contestNames = $this->Contests->getContestName($uid);
+        $this->set('Contests',$contestNames);
 
     }
 	//page A.2 Equipe
@@ -78,7 +82,7 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date_start"];
               $date_end=$this->request->data["date_end"];
-              $contest_id=$this->request->data["contest_id"];
+              $contest_id=null;
 
               $this->Workouts->addobjets($member_id, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }
@@ -114,7 +118,7 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date"];
               $date_end=$this->request->data["end_date"];
-              $contest_id=$this->request->data["contest_id"];;
+              $contest_id=null;
 
               $this->Workouts->editobjets($id_workouts, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }
@@ -199,6 +203,6 @@ class AccountsController extends AppController
 
         $this->loadModel('Workouts');
         $match = $this->Workouts->find('all');
-        $this->set('Workouts', $match);                
+        $this->set('Workouts', $match);                 
     }
 }
