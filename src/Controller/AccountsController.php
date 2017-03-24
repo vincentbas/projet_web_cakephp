@@ -69,7 +69,7 @@ class AccountsController extends AppController
     }
     function seances()
     {
-         $this->loadModel("Workouts");
+        $this->loadModel("Workouts");
         if ($this->request->is("post")){
             if(isset($_POST['ajouter'])){
               $member_id=$this->request->Session()->read('Auth.User.id');
@@ -82,17 +82,28 @@ class AccountsController extends AppController
 
               $this->Workouts->addobjets($member_id, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }
-           
-            
-        /*elseif(isset($_POST['supprimer'])){
-          // Dans un controller.
-          $id=$this->request->data["id"];
-          $this->Workouts->suppobjets($id);
-        }*/
       }
       $w = $this->Workouts->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
             $this->Set("ws",$w->toArray());
+
     }
+
+            function delete($id)
+            {
+                $this->loadModel("Workouts");
+                $this->request->allowMethod(['post', 'delete']);
+                $workouts = $this->Workouts->get($id);
+                if ($this->Workouts->delete($workouts)) {
+                    $this->Flash->success(__('The device has been deleted.'));
+                } else {
+                    $this->Flash->error(__('The device could not be deleted. Please, try again.'));
+                }
+
+                return $this->redirect(['action' => 'seances']);
+            }
+
+
+
 	//page F Mentions Légales
     function mentions()
     {
