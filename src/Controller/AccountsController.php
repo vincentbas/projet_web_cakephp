@@ -183,7 +183,6 @@ class AccountsController extends AppController
     function competitions()
     {
        $this->loadModel('Contests');
-
       if ($this->request->is('post')){
         if(($this->request->data['name'])&&($this->request->data['type'])&&($this->request->data['description'])){
           $name=$this->request->data['name'];
@@ -192,7 +191,14 @@ class AccountsController extends AppController
           $this->Contests->addcompetition($name, $type, $description);
         }
       }
+      else{
+
+      }
         $c=$this->Contests->find();
         $this->Set('compet',$c->toArray());
+
+        $this->loadModel('Workouts');
+        $match = $this->Workouts->find('all');
+        $this->set('Workouts', $match);                
     }
 }
