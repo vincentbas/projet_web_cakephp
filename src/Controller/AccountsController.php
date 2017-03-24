@@ -24,10 +24,6 @@ class AccountsController extends AppController
         $w = $this->Workouts->find()->where(['member_id' => $uid])->group(['sport']);
         $this->set("workouts", $w->toArray());
 
-       /* $this->loadModel('Stickers');
-        $stickersNames = $this->Stickers->getStickerName($uid);
-        $this->set('Stickers',$stickersNames);*/
-
         $this->loadModel('Contests');
         $contestNames = $this->Contests->getContestName($uid);
         $this->set('Contests',$contestNames);
@@ -89,7 +85,7 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date_start"];
               $date_end=$this->request->data["date_end"];
-              $contest_id=null;
+              $contest_id=$this->request->data["contest_id"];
 
               $this->Workouts->addobjets($member_id, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }
