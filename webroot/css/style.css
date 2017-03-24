@@ -1927,6 +1927,7 @@ label {
 .login-wrap {
 	padding: 20px;
 }
+
 .login-wrap .registration {
 	text-align: center;
 }
@@ -2256,6 +2257,14 @@ header{
 .device-wrap {
 	padding: 20px;
 }
+
+.height_device a{
+  color:#333;
+  text-decoration: none;
+}
+.height_device a:hover{
+  color:#2a6496;
+}
 /*EndForm Device*/
 
 /*Page Team*/
@@ -2279,18 +2288,27 @@ header{
   border-radius: 4px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, .1);
 }
-.widget p
+.height_device{
+  height:380px;
+  position: relative;
+  background: #f5f5f5;
+  margin-bottom:20px;
+  padding-bottom:20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, .1);
+}
+.widget p, .height_device p
 {
   text-align:center;
 }
 
-.widget > .cover
+.widget > .cover, .height_device > .cover
 {
   height: 160px;
   overflow: hidden;
 }
 
-.widget > .cover > img
+.widget > .cover > img, .height_device > .cover > img
 {
   width: 100%;
   height: auto;
@@ -2298,7 +2316,7 @@ header{
   border-radius: 4px 4px 0 0;
 }
 
-.widget > .photo
+.widget > .photo, .height_device > .photo
 {
   position: absolute;
   top: 85px;
@@ -2311,7 +2329,7 @@ header{
 }
 
 
-.widget > ul
+.widget > ul, .height_device > ul
 {
   position: absolute;
   top: 20px;
@@ -2325,7 +2343,7 @@ li
   list-style: none;
 }
 
-.widget > ul > li > a
+.widget > ul > li > a, .height_device > ul > li > a
 {
   display: block;
   padding: 5px 6px;
@@ -2336,10 +2354,11 @@ li
   transition: background-color .3s;
 }
 
-.widget > ul > li:hover > a { background-color: #2CD5CA }
-.widget > ul > li:first-child > a { border-radius: 0 3px 0 0 }
+.widget > ul > li:hover > a , .height_device > ul > li:hover > a
+{ background-color: #2CD5CA }
+.widget > ul > li:first-child > a, .height_device > ul > li:first-child > a{ border-radius: 0 3px 0 0 }
 
-.widget > ul > li:last-child > a
+.widget > ul > li:last-child > a, .height_device > ul > li:last-child > a
 {
   border: none;
   border-radius: 0 0 3px 0;

@@ -6,7 +6,7 @@
 		<?= $this->Form->input('password', array('type' => 'password',
 												'label' => 'Mot de passe actuel'));?>
 		<?= $this->Form->input('password_new', array('type' => 'password',
-												'label' => 'Nouveau mot de passe'));?>							
+												'label' => 'Nouveau mot de passe'));?>
 		<?= $this->Form->submit('importer', array('class' => 'button','class' => 'btn btn-theme btn-block'));?>
 		<?= $this->Form->end(); ?>
 	</div>

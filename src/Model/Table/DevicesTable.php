@@ -10,20 +10,13 @@ class DevicesTable extends Table
         return $this->Devices->find()->where(["member_id"=>$par1])->toArray();
     }
 
-    public function addobjets($member_id, $serial, $description, $trusted)
+    public function addobjets($member_id, $serial, $description)
     {
     	$new=$this->newEntity();
       $new->member_id=$member_id;
     	$new->serial=$serial;
     	$new->description=$description;
-    	$new->trusted=$trusted;
+    	$new->trusted=0;
     	$this->save($new);
     }
-    public function suppobjets($id)
-    {
-      $entity = $this->get($id);
-      $result = $this->delete($entity);
-    }
-
-
 }
