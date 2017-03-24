@@ -48,6 +48,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Index', 'action' => 'view']);
 
     $routes->fallbacks(DashedRoute::class);
+    $routes->connect('/classement', ['controller' => 'Accounts', 'action' => 'classement']);
 });
 
 Router::scope('/accounts', function (RouteBuilder $routes){
