@@ -34,16 +34,7 @@ class AccountsController extends AppController
     {
 
     }
-	//page A.3 Utilisation
-    function utilisation()
-    {
 
-    }
-	//page B.1 Statistiques
-    function statistiques()
-    {
-
-    }
 	//page B.2 Badges
     function badges()
     {
@@ -116,15 +107,15 @@ class AccountsController extends AppController
 
 
 
-	//page F Mentions Légales
+	//page F Mentions Légales/CNIL
     function mentions()
     {
 
     }
-	//page G FAQ
+	//page G FAQ/Tutoriel/Mode D'Emploi
     function faq()
     {
-        
+
     }
     function details($id_workouts)
     {
@@ -149,12 +140,7 @@ class AccountsController extends AppController
     {
         $this->loadModel("Workouts");
     }
-	//page H CNIL
-    function cnil()
-    {
-
-    }
-  //page H CNIL
+  //page LOCALISATION
     function localisation()
     {
       //Charge le model "Workouts"
@@ -222,7 +208,7 @@ class AccountsController extends AppController
 
         $this->loadModel('Workouts');
         $match = $this->Workouts->find('all');
-        $this->set('Workouts', $match);                 
+        $this->set('Workouts', $match);
     }
 
     function objetsco()

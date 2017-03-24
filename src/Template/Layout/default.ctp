@@ -229,10 +229,10 @@
                       <?= $this->Html->link('<i class="fa fa-book"></i><span>Classement</span>', ['controller' => 'Accounts', 'action' => 'classement'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
-                      <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Objets Connectés</span>', ['controller' => 'Accounts', 'action' => 'objetsco'], ['escape'=>false]) ?>
+                      <?= $this->Html->link('<i class="fa fa-laptop"></i><span>Mes Objets Connectés</span>', ['controller' => 'Accounts', 'action' => 'objetsco'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
-                      <?= $this->Html->link('<i class="fa fa-map-o"></i><span>Localisation</span>', ['controller' => 'Accounts', 'action' => 'Localisation'], ['escape'=>false]) ?>
+                      <?= $this->Html->link('<i class="fa fa-map-marker"></i><span>Localisation</span>', ['controller' => 'Accounts', 'action' => 'Localisation'], ['escape'=>false]) ?>
                   </li>
               </ul>
               <!-- sidebar menu end-->
@@ -269,7 +269,7 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="design">
-           <?= $this->Html->link('Contact', ['controller' => 'Accounts', 'action' => 'contact'], ['escape'=>false]) ?> | <?= $this->Html->link('Mentions Légales', ['controller' => 'Accounts', 'action' => 'mentions'], ['escape'=>false]) ?> | <?= $this->Html->link('FAQ', ['controller' => 'Accounts', 'action' => 'faq'], ['escape'=>false]) ?></div>
+          <?php $v="sportmanager@gmail.com"; echo $this->Html->link($v,'mailto:'.$v,array('target' => '_blank'));?> | <?= $this->Html->link('Mentions Légales', ['controller' => 'Accounts', 'action' => 'mentions'], ['escape'=>false]) ?> | <?= $this->Html->link('FAQ', ['controller' => 'Accounts', 'action' => 'faq'], ['escape'=>false]) ?></div>
       </div>
     </div>
 </footer>

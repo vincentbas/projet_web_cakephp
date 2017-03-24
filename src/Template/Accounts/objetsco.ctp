@@ -1,6 +1,6 @@
 <section class="container">
 	<div class="row">
-		<div class="panel panel-default">
+		<div class="panel panel-default panel_position">
 			<div class="panel-heading"><i class="fa fa-keyboard-o"></i> Ajouter ou supprimer un Device</div>
 			<div class="panel-body">
 				<details>
