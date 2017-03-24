@@ -80,7 +80,7 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date_start"];
               $date_end=$this->request->data["date_end"];
-              $contest_id=null;
+              $contest_id=$this->request->data["contest_id"];
 
               $this->Workouts->addobjets($member_id, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }
@@ -116,7 +116,7 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date"];
               $date_end=$this->request->data["end_date"];
-              $contest_id=null;
+              $contest_id=$this->request->data["contest_id"];;
 
               $this->Workouts->editobjets($id_workouts, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }

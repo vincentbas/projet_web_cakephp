@@ -43,6 +43,10 @@
 		    <label class="sr-only" for="pwd">Description:</label>
 		    <input type="text" class="form-control" placeholder="Description" id="description" name="description">
 		  </div>
+      <div class="form-group">
+        <label class="sr-only" for="pwd">Contest ID:</label>
+        <input type="text" class="form-control" placeholder="Contest ID" id="contest_id" name="contest_id">
+      </div>
 
 		  <button type="submit" class="btn btn-default" name="ajouter">Ajouter</button>
 		</form>
@@ -63,6 +67,7 @@
                      <th>Lieu</th>
                      <th>Durée</th>
                      <th>Description</th>
+                     <th> Contest ID</th>
                       <th>Edit</th>
 
                        <th>Delete</th>
@@ -76,16 +81,21 @@
 					$interval = date_diff($date_a,$date_b);
 					?>
           <tr class="success">
-          <?= $this->Form->postLink(__('<td>'), ['action' => 'logs/'.$w->id]); ?>
-					<?php
-						echo "<td>".$w->id."</td>";
-						/*echo "<td>".$w->member_id."</td>";*/
-						echo "<td>".$w->sport."</td>";
+					
+          <td class="td_workouts"> <?php echo $this->Form->postLink($w->id,['action' => 'logs/'.$w->id]);?> </td> 
+					<td class="td_workouts"> <?php echo $this->Form->postLink($w->sport,['action' => 'logs/'.$w->id]);?> </td>  
+          <td class="td_workouts"> <?php echo $this->Form->postLink($w->date,['action' => 'logs/'.$w->id]);?> </td>  
+          <td class="td_workouts"> <?php echo $this->Form->postLink($w->end_date,['action' => 'logs/'.$w->id]);?> </td>  
+          <td class="td_workouts"> <?php echo $this->Form->postLink($w->location_name,['action' => 'logs/'.$w->id]);?> </td>  
+          <td class="td_workouts"> <?php echo $this->Form->postLink($interval->format('%h')." heure(s) ".$interval->format('%m'),['action' => 'logs/'.$w->id]);?> </td> 
+          <td class="td_workouts"> <?php echo $this->Form->postLink(utf8_decode($w->description),['action' => 'logs/'.$w->id]);?> </td> 
+          <td class="td_workouts"> <?php echo $this->Form->postLink($w->contest_id,['action' => 'logs/'.$w->id]);?> </td> 
+						<?php /*echo "<td>".$w->sport."</td>";
 						echo "<td>".$w->date."</td>";
 						echo "<td>".$w->end_date."</td>";
 						echo "<td>".$w->location_name."</td>";
 						echo "<td>".$interval->format('%h')." heure(s) ".$interval->format('%m')." minute(s)</td>";
-						echo "<td>".utf8_decode($w->description)."</td>";
+						echo "<td>".utf8_decode($w->description)."</td>";*/
 
 						/*echo "<td>".$w->contest_i."</td>";*/
 					?>
