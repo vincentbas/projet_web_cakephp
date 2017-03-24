@@ -269,8 +269,7 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="design">
-           <?= $this->Html->link('Contact', ['controller' => 'Accounts', 'action' => 'contact'], ['escape'=>false]) ?> | <?= $this->Html->link('Mentions Légales', ['controller' => 'Accounts', 'action' => 'mentions'], ['escape'=>false]) ?> | <?= $this->Html->link('FAQ', ['controller' => 'Accounts', 'action' => 'faq'], ['escape'=>false]) ?> | <?= $this->Html->link('CNIL', ['controller' => 'Accounts', 'action' => 'cnil'], ['escape'=>false]) ?>
-        </div>
+           <?= $this->Html->link('Contact', ['controller' => 'Accounts', 'action' => 'contact'], ['escape'=>false]) ?> | <?= $this->Html->link('Mentions Légales', ['controller' => 'Accounts', 'action' => 'mentions'], ['escape'=>false]) ?> | <?= $this->Html->link('FAQ', ['controller' => 'Accounts', 'action' => 'faq'], ['escape'=>false]) ?></div>
       </div>
     </div>
 </footer>
