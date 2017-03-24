@@ -67,9 +67,16 @@ class AccountsController extends AppController
     function classement()
     {
         //Charge le model "Workouts"
-        $this->loadModel("Workouts");
+        $this->loadModel("Members");
+        $this->loadModel("Logs");
         //Va chercher toutes les séances
-        $workouts = $this->Workouts->find("all");
+        $members = $this->Members->find("all");
+        $total_table = array();
+        foreach ($members as $member) {
+            $total_table[$member] = $this->Logs->getTotalMemberLogs($member);
+        }
+        dd($total_table);
+
     }
     function seances()
     {
