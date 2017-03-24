@@ -75,7 +75,8 @@
 					$date_b=$w->end_date;
 					$interval = date_diff($date_a,$date_b);
 					?>
-					<tr class="success">
+          <tr class="success">
+          <?= $this->Form->postLink(__('<td>'), ['action' => 'logs/'.$w->id]); ?>
 					<?php
 						echo "<td>".$w->id."</td>";
 						/*echo "<td>".$w->member_id."</td>";*/

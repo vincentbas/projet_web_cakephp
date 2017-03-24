@@ -124,6 +124,10 @@ class AccountsController extends AppController
             $this->set("current",$this->Workouts->get($id_workouts));
 
     }
+    function logs($id_workouts)
+    {
+        $this->loadModel("Workouts");
+    }
 	//page H CNIL
     function cnil()
     {

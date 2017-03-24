@@ -32,7 +32,6 @@ class WorkoutsTable extends Table
     {
         $new=$this->get($id);
         $new->date=$date_start;
-        $new->member_id=$member_id;
         $new->end_date=$date_end;
         $new->description=$description;
         $new->location_name=$location_name;
