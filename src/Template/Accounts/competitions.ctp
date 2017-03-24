@@ -40,6 +40,11 @@
           echo "<li><p>Nom : ".$c->name."</p></li>";
           echo "<li><p>Type : ".$c->type."</p></li>";
           echo "<li><p>Description : ".$c->description."</p></li>";
+          foreach ($Workouts as $w){
+            if($w['contest_id'] == $c->id){
+            echo "<li><p>match : ".$w['description']."</p></li>";
+          }
+          }
           echo "<li><p>".$this->Form->postLink(__('Suppression'), ['action' => 'delete', $c['id']], ['confirm' => __('Êtes vous sur de vouloir supprimer # {0}?', $c['id'])])."</p></li>";
         ?>
       </div>

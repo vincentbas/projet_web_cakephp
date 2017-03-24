@@ -21,12 +21,16 @@ class AccountsController extends AppController
         $this->set("user", $u->toArray()[0]);
 
         $this->loadModel('Workouts');
-        $w = $this->Workouts->find()->where(["member_id"=>$uid]);
+        $w = $this->Workouts->find()->where(['member_id' => $uid])->group(['sport']);
         $this->set("workouts", $w->toArray());
 
-        $this->loadModel('Stickers');
+       /* $this->loadModel('Stickers');
         $stickersNames = $this->Stickers->getStickerName($uid);
-        $this->set('Stickers',$stickersNames);
+        $this->set('Stickers',$stickersNames);*/
+
+        $this->loadModel('Contests');
+        $contestNames = $this->Contests->getContestName($uid);
+        $this->set('Contests',$contestNames);
 
     }
 	//page A.2 Equipe
@@ -78,7 +82,7 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date_start"];
               $date_end=$this->request->data["date_end"];
-              $contest_id=$this->request->data["contest_id"];
+              $contest_id=null;
 
               $this->Workouts->addobjets($member_id, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }
@@ -125,7 +129,7 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date"];
               $date_end=$this->request->data["end_date"];
-              $contest_id=$this->request->data["contest_id"];;
+              $contest_id=null;
 
               $this->Workouts->editobjets($id_workouts, $date_start,$date_end, $location, $description, $sport, $contest_id);
             }
@@ -194,7 +198,6 @@ class AccountsController extends AppController
     function competitions()
     {
        $this->loadModel('Contests');
-
       if ($this->request->is('post')){
         if(($this->request->data['name'])&&($this->request->data['type'])&&($this->request->data['description'])){
           $name=$this->request->data['name'];
@@ -203,7 +206,43 @@ class AccountsController extends AppController
           $this->Contests->addcompetition($name, $type, $description);
         }
       }
+      else{
+
+      }
         $c=$this->Contests->find();
         $this->Set('compet',$c->toArray());
+
+        $this->loadModel('Workouts');
+        $match = $this->Workouts->find('all');
+        $this->set('Workouts', $match);                 
+    }
+
+    function objetsco()
+    {
+        $this->loadModel("Devices");
+
+      if ($this->request->is("post")){
+        if(isset($_POST['ajouter'])){
+          $member_id=$this->request->data["member_id"];
+          $serial=$this->request->data["serial"];
+          $description=$this->request->data["description"];
+          $this->Devices->addobjets($member_id, $serial, $description);
+        }
+      }
+      $w=$this->Devices->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
+        $this->Set("ws",$w->toArray());
+    }
+    public function delete($id)
+    {
+        $this->loadModel("Devices");
+        $this->request->allowMethod(['post', 'delete']);
+        $device = $this->Devices->get($id);
+        if ($this->Devices->delete($device)) {
+            $this->Flash->success(__('The device has been deleted.'));
+        } else {
+            $this->Flash->error(__('The device could not be deleted. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'objetsco']);
     }
 }

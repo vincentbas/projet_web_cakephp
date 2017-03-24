@@ -2,6 +2,7 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
+use Cake\ORM\TableRegistry;
 
 class ContestsTable extends Table
 {
@@ -13,4 +14,26 @@ class ContestsTable extends Table
     	$new->description=$description;
     	$this->save($new);
     }
+
+    public function getContestName($uid){
+    	$workouts = TableRegistry::get('Workouts');
+    	$competition = $workouts->find('all')
+    		->where(['member_id' => $uid]);
+
+		$contests = array();
+		foreach ($competition as $c) {
+			$contests[]=$this->find()
+				->where(['id' => $c->contest_id])
+				->first();
+		}
+
+		return $contests;
+    }
+
+   /* public function getMatch(){
+    	$workouts = TableRegistry::get('Workouts');
+    	$match = $workouts->find('all');
+
+		return $match;
+    }*/
 }

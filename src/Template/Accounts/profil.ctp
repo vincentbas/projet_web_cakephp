@@ -43,14 +43,14 @@
             <div class="col-md-4 col-sm-4 mb">
                 <div class="white-panel pn donut-chart">
                     <div class="white-header">
-                        <h5>BADGES</h5>
+                        <h5>COMPETITIONS</h5>
                     </div>
                     <div>
                         <div class="col-sm-6 col-xs-6 goleft">
 			            	<table>
 								<?php 
-                                    foreach($Stickers as $s){
-                                        echo "<tr>"."<td class='rewards'>".$this->Html->image('sticker.png', array('width' => '25px')).$s['name']."</td>"."</tr>";
+                                    foreach($Contests as $c){
+                                        echo "<tr>"."<td class='rewards'>".$this->Html->image('competition.png', array('width' => '25px')).$c['name']."</td>"."</tr>";
                                     }
 								?>
 							</table>
