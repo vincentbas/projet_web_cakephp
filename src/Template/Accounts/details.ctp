@@ -15,11 +15,12 @@
 
                       <?= $this->Form->input('date', ["value" => $current->date]) ?>
                       <?= $this->Form->input('end_date',["value" => $current->end_date]) ?>
+                      <?= $this->Form->input('sport',["value" => $current->sport]) ?>
                       <?= $this->Form->input('description',["value" => $current->description]) ?>
                       <?= $this->Form->input('location_name',["value" => $current->location_name]) ?>
                       <?= $this->Form->input('contest_id',["value" => $current->contest_id]) ?>
                       <br>
-                      <?= $this->Form->submit('Editer', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'Editer')); ?>
+                      <?= $this->Form->submit('editer', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'editer')); ?>
                       <?= $this->Form->end(); ?>
         
         </details>
