@@ -229,7 +229,7 @@
                       <?= $this->Html->link('<i class="fa fa-book"></i><span>Classement</span>', ['controller' => 'Accounts', 'action' => 'classement'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
-                      <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Objets Connectés</span>', ['controller' => 'Devices', 'action' => 'objetsco'], ['escape'=>false]) ?>
+                      <?= $this->Html->link('<i class="fa fa-tasks"></i><span>Mes Objets Connectés</span>', ['controller' => 'Accounts', 'action' => 'objetsco'], ['escape'=>false]) ?>
                   </li>
                   <li class="sub-menu">
                       <?= $this->Html->link('<i class="fa fa-map-o"></i><span>Localisation</span>', ['controller' => 'Accounts', 'action' => 'Localisation'], ['escape'=>false]) ?>
