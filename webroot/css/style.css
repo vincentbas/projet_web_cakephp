@@ -2428,7 +2428,10 @@ li
 }
 
 /*End Page Présentation*/
-
+.td_change a{
+    color:#797979;
+    text-decoration: none;
+}
 
 .td_workouts a{
     color:#797979;

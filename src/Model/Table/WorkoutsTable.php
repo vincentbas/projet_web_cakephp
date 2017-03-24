@@ -23,11 +23,11 @@ class WorkoutsTable extends Table
     	$new->contest_id=$contest_id;
     	$this->save($new);
     }
-    public function suppworkouts($id)
+    /*public function suppworkouts($id)
     {
       $entity = $this->Workouts->get($id);
       $result = $this->Workouts->delete($entity);
-    }
+    }*/
         public function editobjets($id, $date_start,$date_end, $location_name, $description ,$sport, $contest_id)
     {
         $new=$this->get($id);
