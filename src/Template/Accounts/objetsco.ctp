@@ -43,7 +43,7 @@
 					echo "<li><p>Sérial : ".$w->serial."</p></li>";
 					echo "<li><p>Description : ".$w->description."</p></li>";
 					echo "<li><p>Validation : ".$w->trusted."</p></li>";
-					echo "<li><p>".$this->Form->postLink(__('Suppression'), ['action' => 'delete', $w['id']], ['confirm' => __('Êtes vous sur de vouloir supprimer # {0}?', $w['id'])])."</p></li>";
+					echo "<li><p>".$this->Form->postLink(__('Suppression'), ['action' => 'deleteDevice', $w['id']], ['confirm' => __('Êtes vous sur de vouloir supprimer # {0}?', $w['id'])])."</p></li>";
 				?>
 			</div>
 		</div>

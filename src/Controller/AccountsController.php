@@ -232,7 +232,7 @@ class AccountsController extends AppController
       $w=$this->Devices->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
         $this->Set("ws",$w->toArray());
     }
-    public function delete($id)
+    public function deleteDevice($id)
     {
         $this->loadModel("Devices");
         $this->request->allowMethod(['post', 'delete']);
