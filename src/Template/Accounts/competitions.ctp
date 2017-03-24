@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="form-device">
             <h2 class="form-device-heading">Ajouter une compétition</h2>
-            <div class="device-wrap">	 
+            <div class="device-wrap">
               <?= $this->Form->create('Compétitions'); ?>
                 <?= $this->Form->input('name', ['type' => 'text', 'label' => false, 'placeholder' => 'Nom']) ?>
                 <?= $this->Form->input('type', ['type' => 'text', 'label' => false, 'placeholder' => 'Type']) ?>
@@ -15,7 +15,7 @@
                 <br>
                 <?= $this->Form->submit('Ajouter', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'ajouter')); ?>
               <?= $this->Form->end(); ?>
-		
+
             </div>
           </div>
         </div>
@@ -33,9 +33,9 @@
     <div class="col-lg-4">
       <div class="height_device">
         <div class="cover">
-          <?php echo $this->Html->image('compet.jpg', ['alt' => '']);?>
+          <?php echo $this->Html->image('competition/compet.jpg', ['alt' => '']);?>
         </div>
-        <?php echo $this->Html->image('competition.png', ['alt' => '', 'class' => 'photo']);?><br/><br/>
+        <?php echo $this->Html->image('competition/trophy.png', ['alt' => '', 'class' => 'photo', 'style'=> 'background-color:#fff;']);?><br/><br/>
         <?php
           echo "<li><p>Nom : ".$c->name."</p></li>";
           echo "<li><p>Type : ".$c->type."</p></li>";

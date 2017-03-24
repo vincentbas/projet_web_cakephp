@@ -32,6 +32,7 @@
     <?= $this->Html->css('table-responsive.css') ?>
     <?= $this->Html->css('to-do.css') ?>
     <?= $this->Html->css('zabuto_calendar.css') ?>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <style>
       #map{
         height:620px;
