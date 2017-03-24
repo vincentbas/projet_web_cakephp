@@ -66,12 +66,17 @@ class AccountsController extends AppController
         $this->loadModel("Members");
         $this->loadModel("Logs");
         //Va chercher toutes les séances
+
         $members = $this->Members->find("all");
+        $this->loadModel("Logs");
         $total_table = array();
+        $i = 0;
         foreach ($members as $member) {
-            $total_table[$member] = $this->Logs->getTotalMemberLogs($member);
+            $total_table[$i] = array($this->Logs->getTotalMemberLogs($member), $member->email);
+            $i++;
         }
-        dd($total_table);
+        arsort($total_table);
+        $this->set('ranking', $total_table);
 
     }
     function seances()

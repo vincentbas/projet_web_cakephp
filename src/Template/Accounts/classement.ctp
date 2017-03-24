@@ -6,8 +6,11 @@
      <th>Valeur Log Totale</th>
    </thead>
    <tbody>
-    <?php for ($i=0; $i < ; $i++) { 
-      # code...
+    <?php 
+    $i = 1;
+    foreach ($ranking as $rank) {
+      echo "<tr><td>$i</td><td>".$rank[0]."</td><td>$rank[1]</td></tr>";
+      $i++;
     }
     ?>
    </tbody>
