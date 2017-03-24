@@ -30,8 +30,8 @@
                     <div>
                         <div class="col-sm-6 col-xs-6 goleft">
 			            	<table>
-								<?php foreach($Workouts as $t){
-								echo "<tr>"."<td>".$t->sport."</td>"."</tr>";
+								<?php foreach($workouts as $w){
+								echo "<tr>"."<td>".$w->sport."</td>"."</tr>";
 								}?>
 							</table>
                         </div>

@@ -20,6 +20,10 @@ class AccountsController extends AppController
         $u = $this->Members->find()->where(["id"=>$uid]);
         $this->set("user", $u->toArray()[0]);
 
+        $this->loadModel('Workouts');
+        $w = $this->Workouts->find()->where(["member_id"=>$uid]);
+        $this->set("workouts", $w->toArray());
+
         $this->loadModel('Stickers');
         $stickersNames = $this->Stickers->getStickerName($uid);
         $this->set('Stickers',$stickersNames);
@@ -139,8 +143,7 @@ class AccountsController extends AppController
     {
         $this->loadModel("Members");
         $m = $this->Members->find()->where(["id"=>$this->request->Session()->read('Auth.User.id')])->toArray()[0];
-        $this->Set("member_info",$m);
-        //Si le formulaire a été envoyé
+
         if ($this->request->is('post')) {
             //Si il y a bien un fichier d'uploadé
             if($this->request->data['avatar_file']['name'] != ''){
@@ -162,23 +165,16 @@ class AccountsController extends AppController
 
                 }else{
                     //Messages d'erreurs si quelque chose n'a pas marché
-                $this->Flash->error("Erreur lors de l'importation de votre fichier (Fichiers autorisés < 2Mo et format jpg)", array(
-                    'key' => 'error'
-                ));
-            }
-            }if(!empty($this->request->data['email_new']) || !empty($this->request->data['password_new'])){
-                if($this->request->data['email_new'] != $m->email){
-                    $new_email = $this->request->data['email_new'];
-                }else{
-                    $new_email = $m->email;
+                    $this->Flash->error("Erreur lors de l'importation de votre fichier (Fichiers autorisés < 2Mo et format jpg)", array(
+                        'key' => 'error'
+                    ));
                 }
-                if(!empty($this->request->data['password_new']) && $this->request->data['password'] == $m->password){
-                    $new_password = $this->request->data['password_new'];
-                }else{
-                    $new_password = $m->password;
-                }
-                $this->Members->edit($m->id, $new_email, $new_password);
             }
+            $this->Members->updateProfile($m, $this->request->data['email_new'],$this->request->data['password_new']);
+            $this->redirect(array(
+                'controller' => 'accounts', 'action' => 'profil'
+            ));
         }
+        $this->Set("member_info",$m);
     }
 }

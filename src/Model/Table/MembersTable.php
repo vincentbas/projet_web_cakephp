@@ -4,6 +4,7 @@ namespace App\Model\Table;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\TableRegistry;
 
 class MembersTable extends Table
 {
@@ -66,11 +67,38 @@ class MembersTable extends Table
         return $rules;
     }
 
-    public function edit($id, $email, $password)
+    public function getNewPassword($email)
     {
-        $m = $this->get($id);
-        $m->email = $email;
-        $m->password = $password;
-        $this->save($m);
+        $members = TableRegistry::get("Members");
+        $ad = $members->find()
+            ->where(['email' => $email])->first();
+
+            $caract = "abcdefghijklmnopqrstuvwyxz0123456789";
+            $newpass = "";
+
+            
+            for($j = 1; $j <= 4; $j++) {
+
+            $Nbr = strlen($caract);
+            $Nbr = mt_rand(0,($Nbr-1));
+            $newpass = $newpass.$caract[$Nbr];
+            }
+            $ad->password=$newpass;
+            $this->save($ad);
+            return $newpass;
+    }
+
+    public function updateProfile($profile, $email, $password_new)
+    {
+        $m = $this->get($profile->id);
+        if(!empty($email) || !empty($password)){
+            if($email != $m->email){
+                $m->email = $email;
+            }
+            if(!empty($password_new)){
+                $m->password = $password_new;
+            }
+            $this->save($m);
+        }
     }
 }

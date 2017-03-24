@@ -88,13 +88,29 @@ class MembersController extends AppController
         return $this->redirect($this->Auth->Logout());
     }
 
+    public function forgot(){
+         if ($this->request->is('post')) {
+            $this->loadModel('Members');
+            $email = $this->request->data['email'];             
+            $newPassword = $this->Members->getNewPassword($email);
+            $this->Flash->success('Nouveau mot de passe : '.$newPassword, array(
+                    'key' => 'new_mdp'
+                ));          
+            }
+            else
+            {
+                $this->Flash->success('Veuillez rentrer votre adresse mail', array(
+                    'key' => 'new_mdp'
+                ));
+            }
+        }
+
     public function beforeFilter(Event $event){
         $this->Auth->allow(['add']);
         $this->Auth->allow(['login']);
         $this->Auth->allow(['profil']);
-        
+        $this->Auth->allow(['forgot']);        
     }
-
 }
 
     

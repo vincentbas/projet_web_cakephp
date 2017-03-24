@@ -2355,7 +2355,7 @@ li
 }
 
 .edit-photo-form{
-    height: 350px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2370,7 +2370,7 @@ li
 }
 
 .edit-button{
-    background-color: #424A5D; 
+    background-color: #424A5D;
     border: none;
     margin-top: 15px;
 }
@@ -2385,6 +2385,8 @@ li
     border-bottom: 1px solid #eff2f7;
     padding-bottom: 15px;
     margin-bottom: 15px;
+  }
+
 
 }
 
@@ -2394,6 +2396,11 @@ li
     width: 25px;
 }
 
+.lien_noir
+{
+    color: black;
+}
+
 .message.error{
     color: red;
     display: flex;
@@ -2401,4 +2408,3 @@ li
     margin-top: 15px;
 }
 /*End Page Présentation*/
-
