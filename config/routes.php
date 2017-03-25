@@ -44,7 +44,8 @@ use Cake\Routing\Route\DashedRoute;
 Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
-
+    $routes->extensions(['json','xml']);
+    $routes->resources('Api');
     $routes->connect('/', ['controller' => 'Index', 'action' => 'view']);
 
     $routes->fallbacks(DashedRoute::class);

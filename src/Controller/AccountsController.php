@@ -30,22 +30,6 @@ class AccountsController extends AppController
     {
 
     }
-
-	//page B.2 Badges
-    function badges()
-    {
-
-    }
-	//page C.1 Calendrier
-    function calendrier()
-    {
-
-    }
-	//page C.2 Entraînements
-    function entrainements()
-    {
-
-    }
 	//page D Classement
     function classement()
     {
