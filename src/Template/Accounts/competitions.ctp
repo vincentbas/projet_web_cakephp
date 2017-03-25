@@ -1,7 +1,9 @@
-<section class="container">
-	<div class="row">
-    <div class="col-md-12">
-      <h4>Compétitions</h4>
+
+<div class="row">
+	<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading"><i class="fa fa-soccer-ball-o"></i>Compétition</div>
+		<div class="panel-body">
       <details>
 		  <summary id="ajout">Cliquez pour ajouter une compétition</summary>
         <div class="col-md-12">
@@ -22,13 +24,12 @@
       </details>
     </div>
   </div>
+</div>
+</div>
+
+
     <br>
   <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading"><i class="fa fa-soccer-ball-o"></i> Les compétitions</div>
-      </div>
-    </div>
     <?php foreach ($compet as $c){ ?>
     <div class="col-lg-4">
       <div class="height_device">
@@ -51,4 +52,3 @@
     </div>
     <?php } ?>
   </div>
-</section>

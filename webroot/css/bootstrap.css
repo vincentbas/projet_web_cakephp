@@ -6202,7 +6202,6 @@ input[type="email"], input[type="password"], input[type="text"]{
   border-radius: 7px;
   border: 1px solid #797979;
 }
-
 input[type="password"],.device-wrap input[type="text"]{
   margin-top: 10px;
 }

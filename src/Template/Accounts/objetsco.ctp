@@ -42,11 +42,12 @@
 				echo "<li><p>Id : ".$w->id."</p></li>";
 				echo "<li><p>Membre : ".$w->member_id."</p></li>";
 				echo "<li><p>Sérial : ".$w->serial."</p></li>";
-				echo "<li><p>Description : ".$w->description."</p></li>";?>
+				echo "<li><p>Description : ".$w->description."</p></li>";
+				echo "<li><p>Validé : ".$w->trusted."</p></li>";?>
 				<?= $this->Form->create("Devices"); ?>
 				<?= $this->Form->end(['action' => 'deleteDevice', $w['id']],['action' => 'editobjetco', $w['id']]); ?>
-				<?= "<li><p>Validé : ".$this->Form->postButton('trusted',['action'=> 'editobjetco', $w['id']])."</p></li>"?>
-				
+				<?= "<li><p>".$this->Form->postButton('trusted',['action'=> 'editobjetco', $w['id']])."</p></li>"?>
+
 				<?php echo "<li><p>".$this->Form->postLink(__('Suppression'), ['action' => 'deleteDevice', $w['id']], ['confirm' => __('Êtes vous sur de vouloir supprimer # {0}?', $w['id'])])."</p></li>";?>
 		</div>
 	</div>
