@@ -284,15 +284,7 @@
   <?= $this->fetch('script');?>
   <?= $this->fetch('jquery'); ?>
   <?= $this->fetch('bootstrap.min'); ?>
-  <?= $this->fetch('jquery.dcjqaccordion.2.7'); ?>
-  <?= $this->fetch('jquery.scrollTo.min'); ?>
-  <?= $this->fetch('jquery.nicescroll'); ?>
-  <?= $this->fetch('jquery.sparkline'); ?>
-  <?= $this->fetch('common-scripts'); ?>
-  <?= $this->fetch('jquery.gritter'); ?>
-  <?= $this->fetch('gritter-conf'); ?>
-  <?= $this->fetch('sparkline-chart'); ?>
-  <?= $this->fetch('zabuto_calendar'); ?>
+  
 
   </body>
 <?php $this->assign("title", "Projet Web"); ?>

@@ -223,7 +223,7 @@ class AccountsController extends AppController
           $this->Devices->addobjets($member_id, $serial, $description);
         }
       }
-      $w=$this->Devices->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
+        $w=$this->Devices->find()->where(["member_id"=>$this->request->Session()->read('Auth.User.id')]);
         $this->Set("ws",$w->toArray());
     }
     public function deleteDevice($id)
@@ -238,5 +238,16 @@ class AccountsController extends AppController
         }
 
         return $this->redirect(['action' => 'objetsco']);
+    }
+    public function editobjetco($id)
+    {
+        $this->loadModel("Devices");
+        if (empty($id)) {
+            throw new NotFoundException;
+        }
+        $w = $this->Devices->get($id);
+        $trusted=$this->request->data["trusted"];
+        echo $trusted;
+        $this->Set("ws",$w->toArray());
     }
 }

@@ -10,7 +10,7 @@
 							<h2 class="form-device-heading">Ajouter un Device</h2>
 							<div class="device-wrap">
 									<?= $this->Form->create("Devices"); ?>
-										<?= $this->Form->input('member_id', ['type' => 'text', 'label' => false, 'value'=>$this->request->Session()->read('Auth.User.id')]) ?>
+										<?= $this->Form->input('member_id', ['type' => 'hidden', 'label' => false, 'value'=>$this->request->Session()->read('Auth.User.id')]) ?>
 										<?= $this->Form->input('serial', ['type' => 'text', 'label' => false, 'placeholder' => 'Serial']) ?>
 										<?= $this->Form->input('description',['type' => 'text', 'label' => false, 'placeholder' => 'Description']) ?>
 										<br>
@@ -42,20 +42,12 @@
 				echo "<li><p>Id : ".$w->id."</p></li>";
 				echo "<li><p>Membre : ".$w->member_id."</p></li>";
 				echo "<li><p>Sérial : ".$w->serial."</p></li>";
-				echo "<li><p>Description : ".$w->description."</p></li>";
-				echo "<li><p><span class='switch-button'><i class='switch'></i></span></p></li>";
-				echo "<li><p>".$this->Form->postLink(__('Suppression'), ['action' => 'deleteDevice', $w['id']], ['confirm' => __('Êtes vous sur de vouloir supprimer # {0}?', $w['id'])])."</p></li>";
-			?>
+				echo "<li><p>Description : ".$w->description."</p></li>";?>
+				<?= $this->Form->create("Devices"); ?>
+				<?= "<li><p>Validé : ".$this->Form->checkbox('trusted',['action'=> 'editobjetco', $w['id']])."</p></li>"?>
+				<?= $this->Form->end(['action' => 'deleteDevice', $w['id']]); ?>
+				<?php echo "<li><p>".$this->Form->postLink(__('Suppression'), ['action' => 'deleteDevice', $w['id']], ['confirm' => __('Êtes vous sur de vouloir supprimer # {0}?', $w['id'])])."</p></li>";?>
 		</div>
 	</div>
 	<?php } ?>
 </div>
-<script>
-	window.onload = function() {
-		var button = $('.switch-button');
-		button.on('click', function(e) {
-		  e.preventDefault();
-		  $(button).toggleClass('open');
-		});
-	}
-</script>

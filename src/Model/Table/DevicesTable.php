@@ -19,4 +19,14 @@ class DevicesTable extends Table
     	$new->trusted=0;
     	$this->save($new);
     }
+    public function updateobjetsco($w, $trusted)
+    {
+        $w = $this->get($device->id);
+        if(!empty($trusted)){
+            if($trusted != $w->trusted){
+                $w->trusted = $trusted;
+            }
+            $this->save($w);
+        }
+    }
 }
