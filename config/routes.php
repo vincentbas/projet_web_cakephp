@@ -49,6 +49,15 @@ Router::scope('/', function (RouteBuilder $routes) {
 
     $routes->fallbacks(DashedRoute::class);
     $routes->connect('/classement', ['controller' => 'Accounts', 'action' => 'classement']);
+    $routes->connect('/competitions', ['controller' => 'Accounts', 'action' => 'competitions']);
+    $routes->connect('/objetsco', ['controller' => 'Accounts', 'action' => 'objetsco']);
+    $routes->connect('/localisation', ['controller' => 'Accounts', 'action' => 'localisation']);
+    $routes->connect('/seances', ['controller' => 'Accounts', 'action' => 'seances']);
+    $routes->connect('/profil', ['controller' => 'Accounts', 'action' => 'profil']);
+
+    $routes->connect('/login', ['controller' => 'Members', 'action' => 'login']);
+    $routes->connect('/add', ['controller' => 'Members', 'action' => 'add']);
+    $routes->connect('/forgot', ['controller' => 'Members', 'action' => 'forgot']);
 });
 
 Router::scope('/accounts', function (RouteBuilder $routes){
