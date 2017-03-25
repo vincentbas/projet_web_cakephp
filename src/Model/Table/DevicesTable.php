@@ -1,7 +1,10 @@
 <?php
 namespace App\Model\Table;
 
+use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
+use Cake\Validation\Validator;
+use Cake\ORM\TableRegistry;
 
 class DevicesTable extends Table
 {
@@ -19,14 +22,13 @@ class DevicesTable extends Table
     	$new->trusted=0;
     	$this->save($new);
     }
-    public function updateobjetsco($w, $trusted)
+
+    public function updateobjetsco($id)
     {
-        $w = $this->get($device->id);
-        if(!empty($trusted)){
-            if($trusted != $w->trusted){
-                $w->trusted = $trusted;
-            }
-            $this->save($w);
-        }
+        $device = TableRegistry::get('Devices');
+        $trusted = $device->find()
+            ->where(['id' => $id])->first();
+         $trusted->trusted = 1;
+            $this->save($trusted);
     }
 }

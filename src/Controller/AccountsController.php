@@ -221,13 +221,9 @@ class AccountsController extends AppController
     }
     public function editobjetco($id)
     {
-        $this->loadModel("Devices");
-        if (empty($id)) {
-            throw new NotFoundException;
-        }
-        $w = $this->Devices->get($id);
-        $trusted=$this->request->data["trusted"];
-        echo $trusted;
-        $this->Set("ws",$w->toArray());
+        $this->loadModel('Devices');
+        $device = $this->Devices->get($id);             
+        $trusted = $this->Devices->updateobjetsco($id);
+        return $this->redirect(['action' => 'objetsco']);
     }
 }
