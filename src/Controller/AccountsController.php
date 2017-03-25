@@ -6,11 +6,7 @@ use Cake\ORM\TableRegistry;
 
 class AccountsController extends AppController
 {
-	//page A.1 Présentation
-    function presentation()
-    {
 
-    }
     //page Profil
     function profil()
     {

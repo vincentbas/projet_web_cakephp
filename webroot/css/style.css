@@ -2276,7 +2276,7 @@ color:#ff0000;
   width:100%!important;
 }
 /*End Page Team*/
-/*Page Présentation*/
+
 .panel-body p{
   padding-left:10px!important;
 }
@@ -2429,7 +2429,84 @@ li
     justify-content: center;
     margin-top: 15px;
 }
-
+/*Page Présentation*/
+.background{
+  position:relative;
+}
+.titre_site {
+  position:absolute;
+  color:#fff;
+  top:200px;
+  left:60%;
+}
+.titre_site h1{
+  font-size: 72px!important;
+}
+.titre_site p
+{
+  font-size: 14px!important;
+  width:85%;
+}
+.style_btn1{
+  position:absolute;
+  color:#333;
+  width:200px;
+  top:430px;
+  left:62%;
+}
+.style_btn2{
+  position:absolute;
+  color:#333;
+  width:200px;
+  top:430px;
+  left:78%;
+}
+.style_btn3{
+  position:absolute;
+  color:#333;
+  width:200px;
+  top:20px;
+  right:5%;
+}
+.icon_service i{
+  width:30px;
+}
+.service1{
+  position:absolute;
+  width:70px;
+  top:30px;
+  left:10%;
+}
+.service2{
+  position:absolute;
+  width:70px;
+  top:230px;
+  left:42%;
+}
+.service3{
+  position:absolute;
+  width:70px;
+  top:530px;
+  left:42%;
+}
+.service4{
+  position:absolute;
+  width:70px;
+  top:70px;
+  left:35%;
+}
+.service5{
+  position:absolute;
+  width:70px;
+  top:530px;
+  left:5%;
+}
+.service6{
+  position:absolute;
+  width:70px;
+  top:270px;
+  left:5%;
+}
 /*End Page Présentation*/
 /*Butoon Switch*/
 .switch-button {

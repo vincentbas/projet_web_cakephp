@@ -284,8 +284,6 @@
   <?= $this->fetch('script');?>
   <?= $this->fetch('jquery'); ?>
   <?= $this->fetch('bootstrap.min'); ?>
-  
-
   </body>
 <?php $this->assign("title", "Projet Web"); ?>
 </html>
