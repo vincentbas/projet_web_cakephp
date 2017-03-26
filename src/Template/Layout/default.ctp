@@ -58,6 +58,9 @@
             <!--logo start-->
             <div style="display: flex; align-items: center;">
               <a class="logo"><b>SportManager</b></a>
+              <li class="sub-menu">
+                      <?= $this->Html->link('<i class="fa fa-home"></i><span><a class="logo"><b></b></a></span>', ['controller' => 'Index', 'action' => 'view'], ['escape'=>false]) ?>
+                  </li>
               <!--logo end-->
 
               <div class="nav notify-row">
