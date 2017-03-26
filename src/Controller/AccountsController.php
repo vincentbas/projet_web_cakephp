@@ -126,7 +126,27 @@ class AccountsController extends AppController
     }
     function logs($id_workouts)
     {
-                $this->loadModel("Workouts");
+                      //Charge le model "Workouts"
+                        $this->loadModel("Logs");
+                     //Va chercher toutes les séances
+                        $loc = $this->Logs->find();
+                     $this->Set("locs",$loc->toArray());
+
+
+
+
+                $this->loadModel("Logs");
+                /*if ($this->request->is("post")){*/
+                $logs = $this->Logs->find()->where(["id"=>$this->request->Session()->read('Auth.User.id'),"workout_id"=>$id_workouts]);
+              /*$log_value=$this->request->data["log_value"];
+              $log_type=$this->request->data["log_type"];
+              $latitude=$this->request->data["location_latitude"];
+              $longitude=$this->request->data["location_latitude"];
+              $device_id=$this->request->data["device_id"];
+          }*/
+                 $this->Set("logs",$this->Logs->get($id_workouts));
+
+         $this->loadModel("Workouts");
         if ($this->request->is("post")){
             if(isset($_POST['editer'])){
               $member_id=$this->request->Session()->read('Auth.User.id');
