@@ -18,7 +18,7 @@
         <?php
         $i = 1;
         foreach ($ranking as $rank) {
-          echo "<tr><td>$i</td><td>".$rank[0]."</td><td>$rank[1]</td></tr>";
+          echo "<tr><td>$i</td><td>".$rank[1]."</td><td>$rank[0]</td></tr>";
           $i++;
         }
         ?>
