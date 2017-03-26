@@ -55,6 +55,7 @@ class AccountsController extends AppController
         $this->set('ranking', $total_table);
 
     }
+
     function seances()
     {
         $this->loadModel("Workouts");
