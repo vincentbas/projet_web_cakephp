@@ -18,7 +18,9 @@ class ContestsTable extends Table
     public function getContestName($uid){
     	$workouts = TableRegistry::get('Workouts');
     	$competition = $workouts->find('all')
-    		->where(['member_id' => $uid]);
+    		->where(['member_id' => $uid])
+            ->order(array('id DESC'))
+            ->limit('7');
 
 		$contests = array();
 		foreach ($competition as $c) {
