@@ -87,7 +87,7 @@
           <td class="td_workouts"> <?php echo $this->Form->postLink($w->date,['action' => 'logs/'.$w->id]);?> </td>
           <td class="td_workouts"> <?php echo $this->Form->postLink($w->end_date,['action' => 'logs/'.$w->id]);?> </td>
           <td class="td_workouts"> <?php echo $this->Form->postLink($w->location_name,['action' => 'logs/'.$w->id]);?> </td>
-          <td class="td_workouts"> <?php echo $this->Form->postLink($interval->format('%h')." heure(s) ".$interval->format('%m'),['action' => 'logs/'.$w->id]);?> </td>
+          <td class="td_workouts"> <?php echo $this->Form->postLink($interval->format('%h')." h  ".$interval->format('%i'),['action' => 'logs/'.$w->id]);?> </td>
           <td class="td_workouts"> <?php echo $this->Form->postLink(utf8_decode($w->description),['action' => 'logs/'.$w->id]);?> </td>
           <td class="td_workouts"> <?php echo $this->Form->postLink($w->contest_id,['action' => 'logs/'.$w->id]);?> </td>
 						<?php /*echo "<td>".$w->sport."</td>";

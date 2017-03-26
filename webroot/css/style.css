@@ -2301,9 +2301,7 @@ color:#ff0000;
   border-radius: 4px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, .1);
 }
-Form{
-  text-align: center!important;
-}
+
 .widget p, .height_device p
 {
   text-align:center;
@@ -2554,8 +2552,10 @@ li
 .td_change a{
     color:#797979;
     text-decoration: none;
+    text-align:center;
 }
 
 .td_workouts a{
     color:#797979;
+    text-align:center;
 }
