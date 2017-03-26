@@ -19,7 +19,10 @@
                       <?= $this->Form->input('description',["value" => $current->description]) ?>
                       <?= $this->Form->input('location_name',["value" => $current->location_name]) ?>
                       <br>
-                      <?= $this->Form->input('contest_id',["value" => $current->contest_id]) ?>
+                      <?= $this->Form->input('contest_id', array(
+                              'type' => 'text',
+                              'value' => $current->contest_id
+                          ));  ?>
                       <br>
                       <?= $this->Form->submit('Editer', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'editer')); ?>
                       <?= $this->Form->end(); ?>
