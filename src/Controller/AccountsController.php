@@ -17,7 +17,7 @@ class AccountsController extends AppController
         $this->set("user", $u->toArray()[0]);
 
         $this->loadModel('Workouts');
-        $w = $this->Workouts->find()->where(['member_id' => $uid])->group(['sport']);
+        $w = $this->Workouts->find()->where(['member_id' => $uid]);
         $this->set("workouts", $w->toArray());
 
         $this->loadModel('Contests');
@@ -108,9 +108,14 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date"];
               $date_end=$this->request->data["end_date"];
-              $contest_id=null;
+              $contest_id=$this->request->data["contest_id"];
+            /*$new_date_start=$date_start->format('%Y')."-".$date_start->format('%D')."-".$date_start->format('%M')." ".$date_start->format('%h')."-".$date_start->format('%i')."-".$date_start->format('%s');*/
+            $d1->setDateCreation(new \DateTime($data['date']));
+            /*$new_date_end=$date_end->format('%Y')."-".$date_end->format('%D')."-".$date_end->format('%M')." ".$date_end->format('%h')."-".$date_end->format('%i')."-".$date_end->format('%s');*/
+             $d2->setDateCreation(new \DateTime($data['end_date']));
 
-              $this->Workouts->editobjets($id_workouts, $date_start,$date_end, $location, $description, $sport, $contest_id);
+
+              $this->Workouts->editobjets($id_workouts, $d1,$d2, $location, $description, $sport, $contest_id);
             }
             }
             $this->set("current",$this->Workouts->get($id_workouts));
@@ -118,7 +123,19 @@ class AccountsController extends AppController
     }
     function logs($id_workouts)
     {
-        $this->loadModel("Workouts");
+                $this->loadModel("Workouts");
+        if ($this->request->is("post")){
+            if(isset($_POST['editer'])){
+              $member_id=$this->request->Session()->read('Auth.User.id');
+              $location=$this->request->data["location_name"];
+              $description=$this->request->data["description"];
+              $sport=$this->request->data["sport"];
+              $date_start=$this->request->data["date"];
+              $date_end=$this->request->data["end_date"];
+              $contest_id=$this->request->data["contest_id"];
+            }
+            }
+            $this->set("current",$this->Workouts->get($id_workouts));
     }
   //page LOCALISATION
     function localisation()

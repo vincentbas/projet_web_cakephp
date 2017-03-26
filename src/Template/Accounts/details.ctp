@@ -13,6 +13,7 @@
            <?= $this->Form->hidden('id',['value'=>$current->id]); ?>
                       <?= $this->Form->hidden('member_id', ['value'=>$this->request->Session()->read('Auth.User.id')]) ?>
 
+
                       <?= $this->Form->input('date', ["value" => $current->date->i18nFormat('yyyy-MM-dd HH:mm'), "class" => "datetimepicker"]) ?>
                       <?= $this->Form->input('end_date',["value" => $current->end_date->i18nFormat('yyyy-MM-dd HH:mm'), "class" => "datetimepicker"]) ?>
                       <?= $this->Form->input('sport',["value" => $current->sport]) ?>
@@ -20,6 +21,7 @@
                       <?= $this->Form->input('location_name',["value" => $current->location_name]) ?>
                       <br>
                       <?= $this->Form->input('contest_id',["value" => $current->contest_id, "type" => "text"]) ?>
+
                       <br>
                       <?= $this->Form->submit('Editer', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'editer')); ?>
                       <?= $this->Form->end(); ?>
