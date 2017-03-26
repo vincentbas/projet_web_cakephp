@@ -20,7 +20,7 @@ class AccountsController extends AppController
         $w = $this->Workouts->find()
           ->where(['member_id' => $uid])
           ->order(array('id DESC'))
-          ->limit('8');;
+          ->limit('10');;
         $this->set("workouts", $w->toArray());
 
         $this->loadModel('Contests');

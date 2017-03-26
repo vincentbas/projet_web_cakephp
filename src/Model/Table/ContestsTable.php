@@ -24,12 +24,15 @@ class ContestsTable extends Table
 
 		$contests = array();
 		foreach ($competition as $c) {
+            if($c->contest_id != null){
 			$contests[]=$this->find()
 				->where(['id' => $c->contest_id])
 				->first();
+            }
 		}
-
 		return $contests;
+    
+    
     }
 
    /* public function getMatch(){
