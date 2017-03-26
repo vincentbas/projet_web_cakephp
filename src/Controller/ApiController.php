@@ -27,9 +27,8 @@ class ApiController extends AppController
     else{
       $this->loadModel('Devices');
       $this->loadModel('Logs');
-
       $dev=$this->Devices->find()->where(['serial'=>$obj]);
-      $member=$dev->toArray()->member_id;
+      $member=$dev->toArray()[0]->member_id;
       $value=$this->Logs->find()->where(['member_id'=>$member, 'id' => $id]);
 
       $this->set('isTrusted', true);
