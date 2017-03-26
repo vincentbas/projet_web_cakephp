@@ -85,8 +85,8 @@ class MembersController extends AppController
 
      public function logout(){
         $this->Flash->success('You are logged out');
-        return $this->redirect(['controller' => 'Index',
-                                        'action' => 'view']);
+        return $this->redirect($this->Auth->Logout());
+
     }
 
     public function forgot(){
