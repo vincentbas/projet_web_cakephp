@@ -42,8 +42,20 @@ class ApiController extends AppController
 
   }
 
-  public function getsummary($id = null, $obj = null, $desc = null)
+  public function getsummary($obj = null)
   {
+    if($obj == null) {
+      $this->set('isTrusted', false);//echec de la connexion (problème avec les params)
+    }
+    else{
+      $this->loadModel('Devices');
+      $this->loadModel('Logs');
+      $dev=$this->Devices->find()->where(['serial'=>$obj]);
+      $member=$dev->toArray()[0]->member_id;
+      $value=$this->Logs->find()->where(['member_id'=>$member])->order(['date' => 'ASC'])->limit(3)->offset(1);
 
+      $this->set('isTrusted', true);
+    }
+    $this->Set("valueLog",$value->toArray());
   }
 }

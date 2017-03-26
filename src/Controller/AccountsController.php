@@ -17,12 +17,17 @@ class AccountsController extends AppController
         $this->set("user", $u->toArray()[0]);
 
         $this->loadModel('Workouts');
-        $w = $this->Workouts->find()->where(['member_id' => $uid]);
+        $w = $this->Workouts->find()
+          ->where(['member_id' => $uid])
+          ->order(array('id DESC'))
+          ->limit('10');;
         $this->set("workouts", $w->toArray());
 
         $this->loadModel('Contests');
         $contestNames = $this->Contests->getContestName($uid);
         $this->set('Contests',$contestNames);
+
+
 
     }
 	//page A.2 Equipe

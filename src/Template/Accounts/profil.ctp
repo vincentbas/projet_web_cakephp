@@ -28,7 +28,7 @@
                         <h5>SPORTS</h5>
                     </div>
                     <div>
-                        <div class="col-sm-6 col-xs-6 goleft">
+                        <div class="col-sm-12 col-xs-12 goleft">
 			            	<table>
 								<?php foreach($workouts as $w){
 								echo "<tr>"."<td>".$w->sport."</td>"."</tr>";
@@ -46,7 +46,7 @@
                         <h5>COMPETITIONS</h5>
                     </div>
                     <div>
-                        <div class="col-sm-6 col-xs-6 goleft">
+                        <div class="col-sm-12 col-xs-12 goleft">
 			            	<table>
 								<?php
                                     foreach($Contests as $c){
@@ -66,9 +66,9 @@
                         <h5>CLASSEMENT</h5>
                     </div>
                     <div>
-                        <div class="col-sm-6 col-xs-6 goleft">
+                        <div class="col-sm-12 col-xs-12 goleft">
                             <table>
-
+                                
                             </table>
                         </div>
                     </div>
