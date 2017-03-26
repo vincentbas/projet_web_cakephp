@@ -2539,12 +2539,25 @@ li
 }
 /*End Butoon Switch*/
 .td_change a{
-    color:#797979;
+    color:blue;
     text-decoration: none;
     text-align:center;
 }
 
+.td_change2 a{
+    color:blue;
+    text-decoration: none;
+    text-align:center;
+}
+
+
 .td_workouts a{
     color:#797979;
     text-align:center;
+    vertical-align: middle;
+}
+
+
+#supp a {
+    color: red;
 }
