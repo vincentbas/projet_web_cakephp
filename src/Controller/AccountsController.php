@@ -109,13 +109,16 @@ class AccountsController extends AppController
               $date_start=$this->request->data["date"];
               $date_end=$this->request->data["end_date"];
               $contest_id=$this->request->data["contest_id"];
-            /*$new_date_start=$date_start->format('%Y')."-".$date_start->format('%D')."-".$date_start->format('%M')." ".$date_start->format('%h')."-".$date_start->format('%i')."-".$date_start->format('%s');*/
+            /*$new_date_start=$date_start->format('%Y')."-".$date_start->format('%D')."-".$date_start->format('%M')." ".$date_start->format('%h')."-".$date_start->format('%i')."-".$date_start->format('%s');
             $d1->setDateCreation(new \DateTime($data['date']));
-            /*$new_date_end=$date_end->format('%Y')."-".$date_end->format('%D')."-".$date_end->format('%M')." ".$date_end->format('%h')."-".$date_end->format('%i')."-".$date_end->format('%s');*/
-             $d2->setDateCreation(new \DateTime($data['end_date']));
+            $new_date_end=$date_end->format('%Y')."-".$date_end->format('%D')."-".$date_end->format('%M')." ".$date_end->format('%h')."-".$date_end->format('%i')."-".$date_end->format('%s');
+             $d2->setDateCreation(new \DateTime($data['end_date']));*/
 
 
-              $this->Workouts->editobjets($id_workouts, $d1,$d2, $location, $description, $sport, $contest_id);
+              $this->Workouts->editobjets($id_workouts, $date_start,$date_end, $location, $description, $sport, $contest_id);
+            $this->redirect(array(
+                'controller' => 'accounts', 'action' => 'seances'
+            ));
             }
             }
             $this->set("current",$this->Workouts->get($id_workouts));
