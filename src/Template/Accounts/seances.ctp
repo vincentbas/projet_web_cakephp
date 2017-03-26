@@ -20,7 +20,7 @@
 					        </div>
 
 					        <div id="form_un" class="col-md-5">
-					          <input type="datetime-local" class="form-control" id="date_debut" name="date_start">
+					          <input type="text" class="form-control datetimepicker" name="date_start">
 					        </div>
 					      </div>
 
@@ -29,7 +29,7 @@
 					          <h5 >Fin de la séance : </h5>
 					        </div>
 					        <div id="form_un" style="margin-top: 15px;" class="col-md-5">
-					          <input type="datetime-local" class="form-control" id="date_fin" name="date_end">
+					          <input type="text" class="form-control datetimepicker" name="date_end">
 					        </div>
 					      </div>
 							  <div class="form-group">
