@@ -78,31 +78,6 @@
     </div>
 
     <div class="panel panel-default">
-      <div class="panel-heading"><i class="fa fa-tasks"></i> <strong>Comment ajouter supprimer ou éditer une séance?</strong></div>
-      <div class="panel-body">
-        <details>
-            <summary>En savoir +</summary><br/>
-            <div class="col-md-12">
-              <strong>Comment récupérer son mot de passe facilement en trois étapes</strong><br/><br/>
-            </div>
-
-            <div class="col-md-4">
-              - Cliquez sur "Mot de Passe Oublié" présent sur le formulaire de connexion<br/><br/>
-              <?php echo $this->Html->image('faq/form_connexion.jpg', ['alt' => 'mdp oublié étape 1', 'class' => ' img-center', 'width'=>'200px']);?>
-            </div>
-            <div class="col-md-4">
-              - Tapez votre adresse mail, puis cliquez sur le bouton réinitialiser<br/><br/>
-              <?php echo $this->Html->image('faq/mdp_oublie2.jpg', ['alt' => 'mdp oublié étape 2', 'class' => ' img-center', 'width'=>'200px']);?>
-            </div>
-            <div class="col-md-4">
-              - Après quelques secondes, un nouveau mdp est généré. Vous pouvez vous re-connecter avec votre nouveau mot de passe en appuyant sur Connexion<br/><br/>
-                <?php echo $this->Html->image('faq/mdp_oublie3.jpg', ['alt' => 'mdp oublié étape 3', 'class' => ' img-center', 'width'=>'200px']);?>
-            </div>
-        </details>
-      </div>
-    </div>
-
-    <div class="panel panel-default">
       <div class="panel-heading"><i class="fa fa-map-marker"></i> <strong>&Agrave; quoi correspond la rubrique Localisation?</strong></div>
       <div class="panel-body">
         <details>
