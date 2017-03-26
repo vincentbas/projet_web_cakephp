@@ -1,12 +1,11 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr">  </script>
-<div id="logs" class="container">
-	<div class="row">
+<div id="logs" class="col-md-6">
+
         <?php 
               $interval = date_diff($current->date ,$current->end_date);
         ?>
 
 
-        <div class="col-md-12">
         <h4>Mes Séances</h4>
         <h3>Ma séance numéro <?= $current->id ?> :</h3>
         <br>
@@ -18,11 +17,31 @@
                       <li>Durée : <?= $interval->format('%h')." h  ".$interval->format('%i')?></li>
                        <li>Description : <?= $current->description ;?></li>
                       <li>Contest : <?= $current->contest_id ;?></li>
-                      <br></ul>
+                      <br>
+                      <li>Log Type : <?= $logs->log_type ;?></li>
+                      <li>Log Value : <?= $logs->log_value;?></li>
+                      <li>Latitude : <?= $logs->location_latitude ;?></li>
+                      <li>Longitude : <?= $logs->location_logitude;?></li>
+                      <li>Device utilisé : <?= $logs->device_id;?></li>
+                      </ul>
+                      
 
+</div>
+              
+<div class="col-md-6" id="map" style="width: 50%; height:515px; display: flex;"></div>
+<table>
+<?php foreach ($locs as $loc){ ?>
 
-                    <div id="carte" style="width:300px; height:300px">
-                      <script>
+    <tr class="success" id="localisation">
+    <?php
+      echo "<td id='pos_lat' data-latitude ='$loc->location_latitude'></td>";
+      echo "<td id='pos_long' data-longitude ='$loc->location_logitude'></td>";
+    ?>
+    </tr>
+
+<?php } ?>
+</table>
+<script>
   function initMap(){
 
     var location_latitude = $("#pos_lat").data('latitude');
@@ -44,14 +63,11 @@
 
   }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmFzYVxq-u2ZMdNcGdxvQsVTJqtRSr0q0&callback=initMap"></script>
-                    </div>
-                              
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmFzYVxq-u2ZMdNcGdxvQsVTJqtRSr0q0&callback=initMap"></script>  
 
 
+</div>
+             
 
-                </div>
-    <!-- /.modal-content -->
-  </div>
       <!-- /.modal-dialog -->
     </div>
