@@ -15,6 +15,8 @@
 
                       <?= $this->Form->input('date', ["value" => $current->date]) ?>
                       <?= $this->Form->input('end_date',["value" => $current->end_date]) ?>
+                      <?= $this->Form->input('date', ["value" => $current->date->i18nFormat('yyyy-MM-dd HH:mm'), "class" => "datetimepicker"]) ?>
+                      <?= $this->Form->input('end_date',["value" => $current->end_date->i18nFormat('yyyy-MM-dd HH:mm'), "class" => "datetimepicker"]) ?>
                       <?= $this->Form->input('sport',["value" => $current->sport]) ?>
                       <?= $this->Form->input('description',["value" => $current->description]) ?>
                       <?= $this->Form->input('location_name',["value" => $current->location_name]) ?>
@@ -23,6 +25,9 @@
                               'type' => 'text',
                               'value' => $current->contest_id
                           ));  ?>
+
+                      <?= $this->Form->input('contest_id',["value" => $current->contest_id, "type" => "text"]) ?>
+
                       <br>
                       <?= $this->Form->submit('Editer', array('class' => 'button','class' => 'btn btn-theme btn-block', 'name' =>'editer')); ?>
                       <?= $this->Form->end(); ?>

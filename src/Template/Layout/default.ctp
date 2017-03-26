@@ -27,6 +27,7 @@
     <?php echo $this->Html->css('font-awesome');?>
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('bootstrap.css') ?>
+    <?= $this->Html->css('bootstrap-datetimepicker.min.css') ?>
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('style-responsive.css') ?>
     <?= $this->Html->css('table-responsive.css') ?>
@@ -280,10 +281,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
   <?= $this->Html->script('bootstrap');?>
-  <?= $this->Html->script('default');?>
   <?= $this->fetch('script');?>
   <?= $this->fetch('jquery'); ?>
   <?= $this->fetch('bootstrap.min'); ?>
+  <?= $this->Html->script('bootstrap-datetimepicker.min');?>
+  <?= $this->Html->script('script_propre');?>
   </body>
 <?php $this->assign("title", "Projet Web"); ?>
 </html>
