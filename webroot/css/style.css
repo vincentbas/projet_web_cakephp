@@ -2301,7 +2301,9 @@ color:#ff0000;
   border-radius: 4px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, .1);
 }
-
+.height_device form{
+  text-align:center!important;
+}
 .widget p, .height_device p
 {
   text-align:center;
