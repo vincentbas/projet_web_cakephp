@@ -265,15 +265,15 @@
   </section>
   <footer class="site-footer">
     <div class="row">
-      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-        <div class="copyright">© 2017, @SportManager, All rights reserved
+      <div class="col-lg-2">
+        <div class="copyright">© 2017, @SportManager
         </div>
       </div>
-      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+      <div class="col-lg-4">
         <div class="copyright">OC-11-CF : ARNAUD - BAS - CAZADE - GEOFFROY ; Options C et F
         </div>
       </div>
-      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+      <div class="col-lg-6">
         <div class="design">
           <?php $v="sportmanager@gmail.com"; echo $this->Html->link($v,'mailto:'.$v,array('target' => '_blank'));?> | <?= $this->Html->link('Mentions Légales', ['controller' => 'Accounts', 'action' => 'mentions'], ['escape'=>false]) ?> | <?= $this->Html->link('FAQ', ['controller' => 'Accounts', 'action' => 'faq'], ['escape'=>false]) ?></div>
       </div>

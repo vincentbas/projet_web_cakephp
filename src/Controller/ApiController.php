@@ -13,8 +13,9 @@ class ApiController extends AppController
   	}
   	else {
   		$this->loadModel('Devices');
-  		$this->Devices->addobjets($id, $obj, $desc);
+  		$this->Devices->addobjetsv($id, $obj, $desc);
   		$this->set('isTrusted', true);
+      //$this->Devices->updateobjetsco($did);
   	}
     return $this->redirect(['controller' => 'Accounts', 'action' => 'objetsco']);
   }
