@@ -17,7 +17,7 @@ class AccountsController extends AppController
         $this->set("user", $u->toArray()[0]);
 
         $this->loadModel('Workouts');
-        $w = $this->Workouts->find()->where(['member_id' => $uid])->group(['sport']);
+        $w = $this->Workouts->find()->where(['member_id' => $uid]);
         $this->set("workouts", $w->toArray());
 
         $this->loadModel('Contests');
