@@ -17,12 +17,17 @@ class AccountsController extends AppController
         $this->set("user", $u->toArray()[0]);
 
         $this->loadModel('Workouts');
-        $w = $this->Workouts->find()->where(['member_id' => $uid]);
+        $w = $this->Workouts->find()
+          ->where(['member_id' => $uid])
+          ->order(array('id DESC'))
+          ->limit('10');;
         $this->set("workouts", $w->toArray());
 
         $this->loadModel('Contests');
         $contestNames = $this->Contests->getContestName($uid);
         $this->set('Contests',$contestNames);
+
+
 
     }
 	//page A.2 Equipe
@@ -50,6 +55,7 @@ class AccountsController extends AppController
         $this->set('ranking', $total_table);
 
     }
+
     function seances()
     {
         $this->loadModel("Workouts");
@@ -108,9 +114,17 @@ class AccountsController extends AppController
               $sport=$this->request->data["sport"];
               $date_start=$this->request->data["date"];
               $date_end=$this->request->data["end_date"];
-              $contest_id=null;
+              $contest_id=$this->request->data["contest_id"];
+            /*$new_date_start=$date_start->format('%Y')."-".$date_start->format('%D')."-".$date_start->format('%M')." ".$date_start->format('%h')."-".$date_start->format('%i')."-".$date_start->format('%s');
+            $d1->setDateCreation(new \DateTime($data['date']));
+            $new_date_end=$date_end->format('%Y')."-".$date_end->format('%D')."-".$date_end->format('%M')." ".$date_end->format('%h')."-".$date_end->format('%i')."-".$date_end->format('%s');
+             $d2->setDateCreation(new \DateTime($data['end_date']));*/
+
 
               $this->Workouts->editobjets($id_workouts, $date_start,$date_end, $location, $description, $sport, $contest_id);
+            $this->redirect(array(
+                'controller' => 'accounts', 'action' => 'seances'
+            ));
             }
             }
             $this->set("current",$this->Workouts->get($id_workouts));
@@ -118,7 +132,39 @@ class AccountsController extends AppController
     }
     function logs($id_workouts)
     {
-        $this->loadModel("Workouts");
+                      //Charge le model "Workouts"
+                        $this->loadModel("Logs");
+                     //Va chercher toutes les séances
+                        $loc = $this->Logs->find();
+                     $this->Set("locs",$loc->toArray());
+
+
+
+
+                $this->loadModel("Logs");
+                /*if ($this->request->is("post")){*/
+                $logs = $this->Logs->find()->where(["id"=>$this->request->Session()->read('Auth.User.id'),"workout_id"=>$id_workouts]);
+              /*$log_value=$this->request->data["log_value"];
+              $log_type=$this->request->data["log_type"];
+              $latitude=$this->request->data["location_latitude"];
+              $longitude=$this->request->data["location_latitude"];
+              $device_id=$this->request->data["device_id"];
+          }*/
+                 $this->Set("logs",$this->Logs->get($id_workouts));
+
+         $this->loadModel("Workouts");
+        if ($this->request->is("post")){
+            if(isset($_POST['editer'])){
+              $member_id=$this->request->Session()->read('Auth.User.id');
+              $location=$this->request->data["location_name"];
+              $description=$this->request->data["description"];
+              $sport=$this->request->data["sport"];
+              $date_start=$this->request->data["date"];
+              $date_end=$this->request->data["end_date"];
+              $contest_id=$this->request->data["contest_id"];
+            }
+            }
+            $this->set("current",$this->Workouts->get($id_workouts));
     }
   //page LOCALISATION
     function localisation()

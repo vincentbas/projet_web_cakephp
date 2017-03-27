@@ -22,13 +22,13 @@
     	 <h3><?= $user->email ?></h3>
 			<br>
 
-			<div class="col-md-4 col-sm-4 mb">
+			<div class="col-md-6 col-sm-6 mb">
                 <div class="white-panel pn donut-chart">
                     <div class="white-header">
                         <h5>SPORTS</h5>
                     </div>
                     <div>
-                        <div class="col-sm-6 col-xs-6 goleft">
+                        <div class="col-sm-12 col-xs-12 goleft">
 			            	<table>
 								<?php foreach($workouts as $w){
 								echo "<tr>"."<td>".$w->sport."</td>"."</tr>";
@@ -40,13 +40,13 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4 mb">
+            <div class="col-md-6 col-sm-6 mb">
                 <div class="white-panel pn donut-chart">
                     <div class="white-header">
                         <h5>COMPETITIONS</h5>
                     </div>
                     <div>
-                        <div class="col-sm-6 col-xs-6 goleft">
+                        <div class="col-sm-12 col-xs-12 goleft">
 			            	<table>
 								<?php
                                     foreach($Contests as $c){
@@ -59,22 +59,5 @@
                     <canvas id="serverstatus01" height="120" width="120"></canvas>
                 </div>
             </div>
-
-            <div class="col-md-4 col-sm-4 mb">
-                <div class="white-panel pn donut-chart">
-                    <div class="white-header">
-                        <h5>CLASSEMENT</h5>
-                    </div>
-                    <div>
-                        <div class="col-sm-6 col-xs-6 goleft">
-                            <table>
-
-                            </table>
-                        </div>
-                    </div>
-                    <canvas id="serverstatus01" height="120" width="120"></canvas>
-                </div>
-            </div>
-
      </div>
 </div>

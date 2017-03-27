@@ -22,6 +22,15 @@ class DevicesTable extends Table
     	$new->trusted=0;
     	$this->save($new);
     }
+    public function addobjetsv($member_id, $serial, $description)
+    {
+    	$new=$this->newEntity();
+      $new->member_id=$member_id;
+    	$new->serial=$serial;
+    	$new->description=$description;
+    	$new->trusted=1;
+    	$this->save($new);
+    }
 
     public function updateobjetsco($id)
     {

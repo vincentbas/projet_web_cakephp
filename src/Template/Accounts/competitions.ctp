@@ -1,8 +1,7 @@
-
 <div class="row">
 	<div class="col-md-12">
 	<div class="panel panel-default">
-		<div class="panel-heading"><i class="fa fa-soccer-ball-o"></i>Compétition</div>
+		<div class="panel-heading"><i class="fa fa-soccer-ball-o"></i> Compétition</div>
 		<div class="panel-body">
       <details>
 		  <summary id="ajout">Cliquez pour ajouter une compétition</summary>

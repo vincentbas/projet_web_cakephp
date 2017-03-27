@@ -27,6 +27,7 @@
     <?php echo $this->Html->css('font-awesome');?>
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('bootstrap.css') ?>
+    <?= $this->Html->css('bootstrap-datetimepicker.min.css') ?>
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('style-responsive.css') ?>
     <?= $this->Html->css('table-responsive.css') ?>
@@ -57,6 +58,9 @@
             <!--logo start-->
             <div style="display: flex; align-items: center;">
               <a class="logo"><b>SportManager</b></a>
+              <li class="sub-menu">
+                      <?= $this->Html->link('<i class="fa fa-home"></i><span><a class="logo"><b></b></a></span>', ['controller' => 'Index', 'action' => 'view'], ['escape'=>false]) ?>
+                  </li>
               <!--logo end-->
 
               <div class="nav notify-row">
@@ -264,13 +268,23 @@
   </section>
   <footer class="site-footer">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <div class="copyright">© 2017, @SportManager, All rights reserved
+      <div class="col-lg-1">
+
+      </div>
+      <div class="col-lg-2">
+        <div class="copyright">© 2017, @SportManager
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="col-lg-4">
+        <div class="copyright">OC-11-CF : ARNAUD - BAS - CAZADE - GEOFFROY ; Options C et F
+        </div>
+      </div>
+      <div class="col-lg-4">
         <div class="design">
-          <?php $v="sportmanager@gmail.com"; echo $this->Html->link($v,'mailto:'.$v,array('target' => '_blank'));?> | <?= $this->Html->link('Mentions Légales', ['controller' => 'Accounts', 'action' => 'mentions'], ['escape'=>false]) ?> | <?= $this->Html->link('FAQ', ['controller' => 'Accounts', 'action' => 'faq'], ['escape'=>false]) ?></div>
+          <?php $v="sportmanager@gmail.com"; echo $this->Html->link($v,'mailto:'.$v,array('target' => '_blank'));?> | <?= $this->Html->link('&Eacute;quipe', ['controller' => 'Accounts', 'action' => 'equipe'], ['escape'=>false]) ?> | <?= $this->Html->link('Mentions Légales', ['controller' => 'Accounts', 'action' => 'mentions'], ['escape'=>false]) ?> | <?= $this->Html->link('FAQ', ['controller' => 'Accounts', 'action' => 'faq'], ['escape'=>false]) ?></div>
+      </div>
+      <div class="col-lg-1">
+
       </div>
     </div>
 </footer>
@@ -280,10 +294,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
   <?= $this->Html->script('bootstrap');?>
-  <?= $this->Html->script('default');?>
   <?= $this->fetch('script');?>
   <?= $this->fetch('jquery'); ?>
   <?= $this->fetch('bootstrap.min'); ?>
+  <?= $this->Html->script('bootstrap-datetimepicker.min');?>
+  <?= $this->Html->script('script_propre');?>
   </body>
 <?php $this->assign("title", "Projet Web"); ?>
 </html>

@@ -2301,7 +2301,9 @@ color:#ff0000;
   border-radius: 4px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, .1);
 }
-
+.height_device form{
+  text-align:center!important;
+}
 .widget p, .height_device p
 {
   text-align:center;
@@ -2526,19 +2528,6 @@ li
   transform: translateX(+26px) rotate(-90deg);
 }
 
-.switch {
-
-  display: block;
-  background-color: #4f4f4f;
-  width: 24px;
-  height: 24px;
-  border-radius: 13px;
-  position: absolute;
-  left: -1px;
-  top: 0;
-  transition: all, 0.4s 0.1s, cubic-bezier(0.55, 0, 0.1, 1);
-  backface-visibility: hidden;
-}
 .switch:before {
   content: "";
   position: absolute;
@@ -2550,12 +2539,25 @@ li
 }
 /*End Butoon Switch*/
 .td_change a{
-    color:#797979;
+    color:blue;
     text-decoration: none;
     text-align:center;
 }
 
+.td_change2 a{
+    color:blue;
+    text-decoration: none;
+    text-align:center;
+}
+
+
 .td_workouts a{
     color:#797979;
     text-align:center;
+    vertical-align: middle;
+}
+
+
+#supp a {
+    color: red;
 }
